@@ -1,0 +1,18 @@
+{
+  "model_name": "MobileNetV2 Transfer Learning",
+  "stage1_epochs": 12,
+  "total_epochs": 17,
+  "batch_size": 16,
+  "stage1_lr": 0.001,
+  "fine_tune_lr": 1e-05,
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "training_duration_seconds": 501.84,
+  "final_train_loss": 0.50828,
+  "final_train_acc": 0.80611,
+  "best_val_loss": 0.41563,
+  "best_val_acc": 0.85224
+}

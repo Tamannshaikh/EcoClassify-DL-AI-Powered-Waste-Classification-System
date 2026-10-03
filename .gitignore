@@ -1,0 +1,96 @@
+# Python Environments & Bytecode
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment Variables & Secrets
+.env
+.env.*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+
+# Databases & Runtime Logs
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/waste_classification.db
+data/predictions.db
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Runtime User Uploads & Generated Prediction Files
+data/uploads/
+data/uploads/**/*
+artifacts/gradcam/
+
+# Large Datasets (Raw, Processed, External, Future)
+data/raw/
+data/processed/
+data/working/
+data/final/
+data/raw/TrashNet/
+data/raw/external/
+data/raw/organic/
+*BDWaste*
+*EWaste*
+*E-Waste*
+*CTSoc*
+
+# Node / Frontend Build Outputs
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+dist-ssr/
+*.local
+
+# IDEs & System Metadata
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Large Archives
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
