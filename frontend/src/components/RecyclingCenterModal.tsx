@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   X,
   MapPin,
@@ -68,18 +68,20 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
 
   // Sync initial waste type when opened
   useEffect(() => {
-    if (initialWasteType) {
+    if (isOpen && initialWasteType) {
       setSelectedWasteType(initialWasteType.toLowerCase());
     }
   }, [initialWasteType, isOpen]);
 
-  // Execute Search
-  const executeSearch = useCallback(async (
+  // Event-driven Search Handler
+  const handleSearch = async (
     targetWaste: string = selectedWasteType,
     targetLat: number = latitude,
     targetLng: number = longitude,
     targetRadius: number = selectedRadius
   ) => {
+    if (isSearching) return;
+
     setIsSearching(true);
     setSearchError(null);
 
@@ -94,20 +96,15 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
       setSearchResponse(response);
     } catch (err) {
       setSearchError(extractErrorMessage(err));
+      setSearchResponse(null);
     } finally {
       setIsSearching(false);
     }
-  }, [selectedWasteType, latitude, longitude, selectedRadius]);
-
-  // Auto-trigger search upon initial opening if not searched yet
-  useEffect(() => {
-    if (isOpen && !searchResponse && !isSearching) {
-      executeSearch();
-    }
-  }, [isOpen, searchResponse, isSearching, executeSearch]);
+  };
 
   // Browser Geolocation Flow
   const handleUseCurrentLocation = () => {
+    if (isLocating) return;
     if (!navigator.geolocation) {
       setLocationError('Geolocation is not supported by your browser. Please select a regional hub below.');
       return;
@@ -124,8 +121,6 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
         setLongitude(lng);
         setLocationLabel('My Current GPS Location');
         setIsLocating(false);
-        // Automatically search with newly detected coordinates
-        executeSearch(selectedWasteType, lat, lng, selectedRadius);
       },
       (error) => {
         setIsLocating(false);
@@ -147,7 +142,6 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
     setLongitude(preset.lng);
     setLocationLabel(preset.name);
     setLocationError(null);
-    executeSearch(selectedWasteType, preset.lat, preset.lng, selectedRadius);
   };
 
   // Close on Escape key
@@ -202,10 +196,7 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
               </label>
               <select
                 value={selectedWasteType}
-                onChange={(e) => {
-                  setSelectedWasteType(e.target.value);
-                  executeSearch(e.target.value, latitude, longitude, selectedRadius);
-                }}
+                onChange={(e) => setSelectedWasteType(e.target.value)}
                 className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 capitalize shadow-sm"
               >
                 {WASTE_CATEGORIES.map((cat) => (
@@ -221,11 +212,7 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
               <label className="text-xs font-bold text-slate-700">Search Radius</label>
               <select
                 value={selectedRadius}
-                onChange={(e) => {
-                  const r = Number(e.target.value);
-                  setSelectedRadius(r);
-                  executeSearch(selectedWasteType, latitude, longitude, r);
-                }}
+                onChange={(e) => setSelectedRadius(Number(e.target.value))}
                 className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2.5 text-xs font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 shadow-sm"
               >
                 {RADIUS_OPTIONS.map((r) => (
@@ -239,9 +226,11 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
             {/* Search Action Button (3 cols) */}
             <div className="md:col-span-3 flex items-end">
               <button
-                onClick={() => executeSearch(selectedWasteType, latitude, longitude, selectedRadius)}
+                id="recycling-search-submit-btn"
+                type="button"
+                onClick={() => handleSearch(selectedWasteType, latitude, longitude, selectedRadius)}
                 disabled={isSearching}
-                className="w-full py-2.5 px-3 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-300 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-1.5"
+                className="w-full py-2.5 px-3 bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-300 text-white font-bold text-xs rounded-xl transition shadow-sm flex items-center justify-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
               >
                 {isSearching ? (
                   <>
@@ -271,9 +260,10 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
 
               {/* GPS Button */}
               <button
+                type="button"
                 onClick={handleUseCurrentLocation}
                 disabled={isLocating}
-                className="text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-xl border border-emerald-200 transition flex items-center gap-1.5"
+                className="text-xs font-bold text-emerald-700 hover:text-emerald-800 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-xl border border-emerald-200 transition flex items-center gap-1.5 cursor-pointer disabled:cursor-not-allowed"
               >
                 {isLocating ? (
                   <>
@@ -306,8 +296,9 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
                 {PRESET_LOCATIONS.map((preset) => (
                   <button
                     key={preset.name}
+                    type="button"
                     onClick={() => handleSelectPreset(preset)}
-                    className={`text-[11px] px-2.5 py-1 rounded-lg border font-medium transition ${
+                    className={`text-[11px] px-2.5 py-1 rounded-lg border font-medium transition cursor-pointer ${
                       locationLabel === preset.name
                         ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm'
                         : 'bg-white text-slate-600 border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50'
@@ -317,8 +308,9 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
                   </button>
                 ))}
                 <button
+                  type="button"
                   onClick={() => setCustomCoordMode(!customCoordMode)}
-                  className="text-[11px] px-2.5 py-1 rounded-lg border border-dashed border-slate-300 text-slate-500 hover:text-slate-800 hover:border-slate-400"
+                  className="text-[11px] px-2.5 py-1 rounded-lg border border-dashed border-slate-300 text-slate-500 hover:text-slate-800 hover:border-slate-400 cursor-pointer"
                 >
                   {customCoordMode ? 'Hide Custom Coords' : '+ Custom Lat/Lng'}
                 </button>
@@ -345,11 +337,12 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
                   className="w-28 px-2 py-1 border border-slate-300 rounded-lg text-xs"
                 />
                 <button
+                  type="button"
                   onClick={() => {
                     setLocationLabel(`Custom (${latitude.toFixed(2)}, ${longitude.toFixed(2)})`);
-                    executeSearch(selectedWasteType, latitude, longitude, selectedRadius);
+                    handleSearch(selectedWasteType, latitude, longitude, selectedRadius);
                   }}
-                  className="bg-slate-800 text-white px-3 py-1 rounded-lg font-bold text-xs hover:bg-slate-700"
+                  className="bg-slate-800 text-white px-3 py-1 rounded-lg font-bold text-xs hover:bg-slate-700 cursor-pointer"
                 >
                   Apply
                 </button>
@@ -478,7 +471,7 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
                   </div>
                 ))}
               </div>
-            ) : (
+            ) : searchResponse && searchResponse.results.length === 0 ? (
               /* Empty Results State */
               <div className="py-10 text-center space-y-3 bg-slate-50 rounded-2xl border border-slate-200">
                 <AlertCircle className="w-8 h-8 text-amber-500 mx-auto" />
@@ -488,15 +481,25 @@ export const RecyclingCenterModal: React.FC<RecyclingCenterModalProps> = ({
                     No specialized {selectedWasteType} recycling centers were found within {selectedRadius} km of {locationLabel}.
                   </p>
                   <button
+                    type="button"
                     onClick={() => {
                       setSelectedRadius(50);
-                      executeSearch(selectedWasteType, latitude, longitude, 50);
+                      handleSearch(selectedWasteType, latitude, longitude, 50);
                     }}
-                    className="mt-3 px-4 py-2 bg-emerald-600 text-white rounded-xl text-xs font-bold hover:bg-emerald-500 transition shadow-xs"
+                    className="mt-3 px-4 py-2 bg-emerald-600 text-white rounded-xl text-xs font-bold hover:bg-emerald-500 transition shadow-xs cursor-pointer"
                   >
                     Expand Search Radius to 50 km
                   </button>
                 </div>
+              </div>
+            ) : (
+              /* Idle Initial State */
+              <div className="py-10 text-center space-y-2 bg-slate-50 rounded-2xl border border-slate-200/80">
+                <Building2 className="w-8 h-8 text-slate-400 mx-auto" />
+                <h5 className="font-bold text-slate-700 text-sm">Ready to Search</h5>
+                <p className="text-xs text-slate-500 max-w-sm mx-auto">
+                  Select your preferred waste category, search radius, and location above, then click &quot;Search&quot; to find nearby recycling centers.
+                </p>
               </div>
             )}
           </div>
