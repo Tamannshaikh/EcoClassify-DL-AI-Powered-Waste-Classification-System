@@ -1,0 +1,514 @@
+sample_id,true_class,true_index,predicted_class,predicted_index,confidence,correct,source_dataset,source_category
+TB0384,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,1. Sugarcane  husk
+TB0385,biodegradable,0,biodegradable,0,0.9993,YES,BDWaste,1. Sugarcane  husk
+TB0386,biodegradable,0,biodegradable,0,0.9986,YES,BDWaste,1. Sugarcane  husk
+TB0387,biodegradable,0,biodegradable,0,0.9995,YES,BDWaste,1. Sugarcane  husk
+TB0388,biodegradable,0,biodegradable,0,0.9975,YES,BDWaste,1. Sugarcane  husk
+TB0389,biodegradable,0,biodegradable,0,0.9993,YES,BDWaste,1. Sugarcane  husk
+TB0390,biodegradable,0,biodegradable,0,0.9993,YES,BDWaste,1. Sugarcane  husk
+TB0391,biodegradable,0,biodegradable,0,0.9996,YES,BDWaste,1. Sugarcane  husk
+TB0392,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,1. Sugarcane  husk
+TB0393,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,1. Sugarcane  husk
+TB0394,biodegradable,0,biodegradable,0,0.9996,YES,BDWaste,1. Sugarcane  husk
+TB0395,biodegradable,0,biodegradable,0,0.9994,YES,BDWaste,1. Sugarcane  husk
+TB0396,biodegradable,0,biodegradable,0,0.9964,YES,BDWaste,1. Sugarcane  husk
+TB0397,biodegradable,0,biodegradable,0,0.9987,YES,BDWaste,1. Sugarcane  husk
+TB0398,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,3. Potato Peel
+TB0399,biodegradable,0,biodegradable,0,0.8789,YES,BDWaste,3. Potato Peel
+TB0400,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,3. Potato Peel
+TB0401,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,3. Potato Peel
+TB0402,biodegradable,0,biodegradable,0,0.9850,YES,BDWaste,3. Potato Peel
+TB0403,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,3. Potato Peel
+TB0404,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,3. Potato Peel
+TB0405,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,3. Potato Peel
+TB0406,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,3. Potato Peel
+TB0407,biodegradable,0,biodegradable,0,0.9998,YES,BDWaste,3. Potato Peel
+TB0408,biodegradable,0,biodegradable,0,0.9645,YES,BDWaste,3. Potato Peel
+TB0409,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,3. Potato Peel
+TB0410,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,5. Mango Peel
+TB0411,biodegradable,0,biodegradable,0,0.9984,YES,BDWaste,5. Mango Peel
+TB0412,biodegradable,0,biodegradable,0,0.9962,YES,BDWaste,5. Mango Peel
+TB0413,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,5. Mango Peel
+TB0414,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,5. Mango Peel
+TB0415,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,5. Mango Peel
+TB0416,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,5. Mango Peel
+TB0417,biodegradable,0,biodegradable,0,0.9997,YES,BDWaste,5. Mango Peel
+TB0418,biodegradable,0,biodegradable,0,0.9998,YES,BDWaste,5. Mango Peel
+TB0419,biodegradable,0,biodegradable,0,0.9997,YES,BDWaste,6. Rice
+TB0420,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,6. Rice
+TB0421,biodegradable,0,biodegradable,0,0.9998,YES,BDWaste,6. Rice
+TB0422,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,6. Rice
+TB0423,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,6. Rice
+TB0424,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,6. Rice
+TB0425,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,6. Rice
+TB0426,biodegradable,0,biodegradable,0,0.9995,YES,BDWaste,7. Shell of Malta
+TB0427,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,8.Lemon Peel
+TB0428,biodegradable,0,biodegradable,0,0.9996,YES,BDWaste,8.Lemon Peel
+TB0429,biodegradable,0,biodegradable,0,0.9965,YES,BDWaste,8.Lemon Peel
+TB0430,biodegradable,0,biodegradable,0,0.9921,YES,BDWaste,8.Lemon Peel
+TB0431,biodegradable,0,biodegradable,0,0.9934,YES,BDWaste,8.Lemon Peel
+TB0432,biodegradable,0,biodegradable,0,0.9947,YES,BDWaste,8.Lemon Peel
+TB0433,biodegradable,0,biodegradable,0,0.9924,YES,BDWaste,8.Lemon Peel
+TB0434,biodegradable,0,biodegradable,0,0.9976,YES,BDWaste,8.Lemon Peel
+TB0435,biodegradable,0,biodegradable,0,0.9990,YES,BDWaste,8.Lemon Peel
+TB0436,biodegradable,0,biodegradable,0,0.9960,YES,BDWaste,8.Lemon Peel
+TB0437,biodegradable,0,biodegradable,0,0.9969,YES,BDWaste,8.Lemon Peel
+TB0438,biodegradable,0,biodegradable,0,0.9887,YES,BDWaste,8.Lemon Peel
+TB0439,biodegradable,0,biodegradable,0,0.9996,YES,BDWaste,8.Lemon Peel
+TB0440,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,9. Banana peel
+TB0441,biodegradable,0,biodegradable,0,0.9980,YES,BDWaste,9. Banana peel
+TB0442,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,9. Banana peel
+TB0443,biodegradable,0,biodegradable,0,0.9987,YES,BDWaste,9. Banana peel
+TB0444,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,9. Banana peel
+TB0445,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,9. Banana peel
+TB0446,biodegradable,0,biodegradable,0,1.0000,YES,BDWaste,9. Banana peel
+TB0447,biodegradable,0,biodegradable,0,0.9815,YES,BDWaste,9. Banana peel
+TB0448,biodegradable,0,biodegradable,0,0.9973,YES,BDWaste,9. Banana peel
+TB0449,biodegradable,0,biodegradable,0,0.9987,YES,BDWaste,9. Banana peel
+TB0450,biodegradable,0,biodegradable,0,0.9999,YES,BDWaste,9. Banana peel
+TC0343,cardboard,1,cardboard,1,0.9996,YES,TrashNet_Raw,cardboard
+TC0344,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0345,cardboard,1,cardboard,1,0.8218,YES,TrashNet_Raw,cardboard
+TC0346,cardboard,1,cardboard,1,0.5953,YES,TrashNet_Raw,cardboard
+TC0347,cardboard,1,cardboard,1,0.9783,YES,TrashNet_Raw,cardboard
+TC0348,cardboard,1,cardboard,1,0.9637,YES,TrashNet_Raw,cardboard
+TC0349,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0350,cardboard,1,paper,5,0.7955,NO,TrashNet_Raw,cardboard
+TC0351,cardboard,1,cardboard,1,0.9963,YES,TrashNet_Raw,cardboard
+TC0352,cardboard,1,trash,7,0.8748,NO,TrashNet_Raw,cardboard
+TC0353,cardboard,1,cardboard,1,0.7410,YES,TrashNet_Raw,cardboard
+TC0354,cardboard,1,cardboard,1,0.9980,YES,TrashNet_Raw,cardboard
+TC0355,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0356,cardboard,1,cardboard,1,0.9992,YES,TrashNet_Raw,cardboard
+TC0357,cardboard,1,cardboard,1,0.9995,YES,TrashNet_Raw,cardboard
+TC0358,cardboard,1,cardboard,1,0.9997,YES,TrashNet_Raw,cardboard
+TC0359,cardboard,1,cardboard,1,0.9995,YES,TrashNet_Raw,cardboard
+TC0360,cardboard,1,paper,5,0.7347,NO,TrashNet_Raw,cardboard
+TC0361,cardboard,1,cardboard,1,0.9856,YES,TrashNet_Raw,cardboard
+TC0362,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0363,cardboard,1,cardboard,1,0.9997,YES,TrashNet_Raw,cardboard
+TC0364,cardboard,1,cardboard,1,0.9998,YES,TrashNet_Raw,cardboard
+TC0365,cardboard,1,cardboard,1,0.9974,YES,TrashNet_Raw,cardboard
+TC0366,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0367,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0368,cardboard,1,cardboard,1,0.6761,YES,TrashNet_Raw,cardboard
+TC0369,cardboard,1,cardboard,1,0.9998,YES,TrashNet_Raw,cardboard
+TC0370,cardboard,1,cardboard,1,0.8577,YES,TrashNet_Raw,cardboard
+TC0371,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0372,cardboard,1,cardboard,1,0.9987,YES,TrashNet_Raw,cardboard
+TC0373,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0374,cardboard,1,cardboard,1,0.9996,YES,TrashNet_Raw,cardboard
+TC0375,cardboard,1,cardboard,1,0.9825,YES,TrashNet_Raw,cardboard
+TC0376,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0377,cardboard,1,cardboard,1,0.9994,YES,TrashNet_Raw,cardboard
+TC0378,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0379,cardboard,1,cardboard,1,0.9998,YES,TrashNet_Raw,cardboard
+TC0380,cardboard,1,cardboard,1,0.9998,YES,TrashNet_Raw,cardboard
+TC0381,cardboard,1,cardboard,1,0.9981,YES,TrashNet_Raw,cardboard
+TC0382,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0383,cardboard,1,cardboard,1,0.9987,YES,TrashNet_Raw,cardboard
+TC0384,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0385,cardboard,1,cardboard,1,0.9578,YES,TrashNet_Raw,cardboard
+TC0386,cardboard,1,cardboard,1,0.9997,YES,TrashNet_Raw,cardboard
+TC0387,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0388,cardboard,1,cardboard,1,0.9861,YES,TrashNet_Raw,cardboard
+TC0389,cardboard,1,cardboard,1,0.9581,YES,TrashNet_Raw,cardboard
+TC0390,cardboard,1,cardboard,1,0.9979,YES,TrashNet_Raw,cardboard
+TC0391,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0392,cardboard,1,plastic,6,0.4197,NO,TrashNet_Raw,cardboard
+TC0393,cardboard,1,cardboard,1,0.9813,YES,TrashNet_Raw,cardboard
+TC0394,cardboard,1,cardboard,1,0.9994,YES,TrashNet_Raw,cardboard
+TC0395,cardboard,1,paper,5,0.6090,NO,TrashNet_Raw,cardboard
+TC0396,cardboard,1,cardboard,1,0.9998,YES,TrashNet_Raw,cardboard
+TC0397,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0398,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0399,cardboard,1,cardboard,1,1.0000,YES,TrashNet_Raw,cardboard
+TC0400,cardboard,1,cardboard,1,0.9999,YES,TrashNet_Raw,cardboard
+TC0401,cardboard,1,cardboard,1,0.9998,YES,TrashNet_Raw,cardboard
+TC0402,cardboard,1,cardboard,1,0.9981,YES,TrashNet_Raw,cardboard
+TC0403,cardboard,1,cardboard,1,0.9540,YES,TrashNet_Raw,cardboard
+TE0384,e_waste,2,e_waste,2,0.6317,YES,EWaste_Image_Dataset,Battery
+TE0385,e_waste,2,metal,4,0.5667,NO,EWaste_Image_Dataset,Battery
+TE0386,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,Keyboard
+TE0387,e_waste,2,e_waste,2,0.8634,YES,EWaste_Image_Dataset,Mobile
+TE0388,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Mouse
+TE0389,e_waste,2,e_waste,2,0.9938,YES,EWaste_Image_Dataset,Mouse
+TE0390,e_waste,2,e_waste,2,0.9990,YES,EWaste_Image_Dataset,Mouse
+TE0391,e_waste,2,e_waste,2,0.9977,YES,EWaste_Image_Dataset,Mouse
+TE0392,e_waste,2,e_waste,2,0.9974,YES,EWaste_Image_Dataset,PCB
+TE0393,e_waste,2,e_waste,2,0.9997,YES,EWaste_Image_Dataset,PCB
+TE0394,e_waste,2,e_waste,2,0.9910,YES,EWaste_Image_Dataset,Battery
+TE0395,e_waste,2,e_waste,2,0.9156,YES,EWaste_Image_Dataset,Battery
+TE0396,e_waste,2,e_waste,2,0.9998,YES,EWaste_Image_Dataset,Battery
+TE0397,e_waste,2,e_waste,2,0.9983,YES,EWaste_Image_Dataset,Battery
+TE0398,e_waste,2,e_waste,2,0.7577,YES,EWaste_Image_Dataset,Battery
+TE0399,e_waste,2,e_waste,2,0.9988,YES,EWaste_Image_Dataset,Battery
+TE0400,e_waste,2,e_waste,2,0.9830,YES,EWaste_Image_Dataset,Battery
+TE0401,e_waste,2,e_waste,2,0.9889,YES,EWaste_Image_Dataset,Battery
+TE0402,e_waste,2,e_waste,2,0.5236,YES,EWaste_Image_Dataset,Battery
+TE0403,e_waste,2,e_waste,2,0.8534,YES,EWaste_Image_Dataset,Battery
+TE0404,e_waste,2,e_waste,2,0.9993,YES,EWaste_Image_Dataset,Battery
+TE0405,e_waste,2,e_waste,2,0.9997,YES,EWaste_Image_Dataset,Battery
+TE0406,e_waste,2,e_waste,2,0.9159,YES,EWaste_Image_Dataset,Battery
+TE0407,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0408,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0409,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,Keyboard
+TE0410,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,Keyboard
+TE0411,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0412,e_waste,2,e_waste,2,0.9997,YES,EWaste_Image_Dataset,Keyboard
+TE0413,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0414,e_waste,2,e_waste,2,0.9993,YES,EWaste_Image_Dataset,Keyboard
+TE0415,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0416,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0417,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0418,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,Keyboard
+TE0419,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Keyboard
+TE0420,e_waste,2,e_waste,2,0.9980,YES,EWaste_Image_Dataset,Keyboard
+TE0421,e_waste,2,e_waste,2,0.9958,YES,EWaste_Image_Dataset,Mobile
+TE0422,e_waste,2,e_waste,2,0.9911,YES,EWaste_Image_Dataset,Mobile
+TE0423,e_waste,2,e_waste,2,0.9984,YES,EWaste_Image_Dataset,Mobile
+TE0424,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,Mobile
+TE0425,e_waste,2,e_waste,2,0.9822,YES,EWaste_Image_Dataset,Mobile
+TE0426,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,Mobile
+TE0427,e_waste,2,e_waste,2,0.9963,YES,EWaste_Image_Dataset,Mobile
+TE0428,e_waste,2,e_waste,2,0.9718,YES,EWaste_Image_Dataset,Mouse
+TE0429,e_waste,2,e_waste,2,0.9998,YES,EWaste_Image_Dataset,Mouse
+TE0430,e_waste,2,e_waste,2,0.9902,YES,EWaste_Image_Dataset,Mouse
+TE0431,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,Mouse
+TE0432,e_waste,2,e_waste,2,0.9980,YES,EWaste_Image_Dataset,Mouse
+TE0433,e_waste,2,e_waste,2,0.9989,YES,EWaste_Image_Dataset,Mouse
+TE0434,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,PCB
+TE0435,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,PCB
+TE0436,e_waste,2,e_waste,2,0.9956,YES,EWaste_Image_Dataset,PCB
+TE0437,e_waste,2,e_waste,2,0.9697,YES,EWaste_Image_Dataset,PCB
+TE0438,e_waste,2,e_waste,2,0.9999,YES,EWaste_Image_Dataset,PCB
+TE0439,e_waste,2,e_waste,2,0.9995,YES,EWaste_Image_Dataset,PCB
+TE0440,e_waste,2,e_waste,2,0.9841,YES,EWaste_Image_Dataset,PCB
+TE0441,e_waste,2,e_waste,2,0.9981,YES,EWaste_Image_Dataset,PCB
+TE0442,e_waste,2,e_waste,2,0.9774,YES,EWaste_Image_Dataset,PCB
+TE0443,e_waste,2,e_waste,2,0.9992,YES,EWaste_Image_Dataset,PCB
+TE0444,e_waste,2,e_waste,2,0.9973,YES,EWaste_Image_Dataset,PCB
+TE0445,e_waste,2,e_waste,2,0.9917,YES,EWaste_Image_Dataset,PCB
+TE0446,e_waste,2,e_waste,2,1.0000,YES,EWaste_Image_Dataset,Battery
+TE0447,e_waste,2,e_waste,2,0.9996,YES,EWaste_Image_Dataset,Mobile
+TE0448,e_waste,2,e_waste,2,0.9766,YES,EWaste_Image_Dataset,PCB
+TE0449,e_waste,2,e_waste,2,0.9995,YES,EWaste_Image_Dataset,PCB
+TE0450,e_waste,2,e_waste,2,0.9996,YES,EWaste_Image_Dataset,PCB
+TG0427,glass,3,glass,3,0.9632,YES,TrashNet_Raw,glass
+TG0428,glass,3,glass,3,0.9997,YES,TrashNet_Raw,glass
+TG0429,glass,3,glass,3,0.5587,YES,TrashNet_Raw,glass
+TG0430,glass,3,glass,3,0.9986,YES,TrashNet_Raw,glass
+TG0431,glass,3,glass,3,0.9898,YES,TrashNet_Raw,glass
+TG0432,glass,3,glass,3,0.9806,YES,TrashNet_Raw,glass
+TG0433,glass,3,glass,3,0.9170,YES,TrashNet_Raw,glass
+TG0434,glass,3,glass,3,0.9432,YES,TrashNet_Raw,glass
+TG0435,glass,3,glass,3,0.9945,YES,TrashNet_Raw,glass
+TG0436,glass,3,glass,3,0.9999,YES,TrashNet_Raw,glass
+TG0437,glass,3,glass,3,0.7529,YES,TrashNet_Raw,glass
+TG0438,glass,3,glass,3,0.6220,YES,TrashNet_Raw,glass
+TG0439,glass,3,glass,3,0.7717,YES,TrashNet_Raw,glass
+TG0440,glass,3,glass,3,0.9977,YES,TrashNet_Raw,glass
+TG0441,glass,3,glass,3,0.9801,YES,TrashNet_Raw,glass
+TG0442,glass,3,glass,3,0.5278,YES,TrashNet_Raw,glass
+TG0443,glass,3,glass,3,0.8660,YES,TrashNet_Raw,glass
+TG0444,glass,3,glass,3,0.7180,YES,TrashNet_Raw,glass
+TG0445,glass,3,glass,3,0.9263,YES,TrashNet_Raw,glass
+TG0446,glass,3,plastic,6,0.9246,NO,TrashNet_Raw,glass
+TG0447,glass,3,glass,3,0.9842,YES,TrashNet_Raw,glass
+TG0448,glass,3,glass,3,0.9986,YES,TrashNet_Raw,glass
+TG0449,glass,3,glass,3,0.9997,YES,TrashNet_Raw,glass
+TG0450,glass,3,glass,3,0.9353,YES,TrashNet_Raw,glass
+TG0451,glass,3,glass,3,0.9910,YES,TrashNet_Raw,glass
+TG0452,glass,3,glass,3,0.9037,YES,TrashNet_Raw,glass
+TG0453,glass,3,glass,3,0.8065,YES,TrashNet_Raw,glass
+TG0454,glass,3,metal,4,0.4900,NO,TrashNet_Raw,glass
+TG0455,glass,3,glass,3,0.9247,YES,TrashNet_Raw,glass
+TG0456,glass,3,glass,3,0.9586,YES,TrashNet_Raw,glass
+TG0457,glass,3,glass,3,0.9986,YES,TrashNet_Raw,glass
+TG0458,glass,3,glass,3,0.9511,YES,TrashNet_Raw,glass
+TG0459,glass,3,glass,3,0.9997,YES,TrashNet_Raw,glass
+TG0460,glass,3,glass,3,0.6710,YES,TrashNet_Raw,glass
+TG0461,glass,3,glass,3,0.9963,YES,TrashNet_Raw,glass
+TG0462,glass,3,glass,3,0.8167,YES,TrashNet_Raw,glass
+TG0463,glass,3,glass,3,0.9419,YES,TrashNet_Raw,glass
+TG0464,glass,3,plastic,6,0.5650,NO,TrashNet_Raw,glass
+TG0465,glass,3,glass,3,0.8379,YES,TrashNet_Raw,glass
+TG0466,glass,3,metal,4,0.5780,NO,TrashNet_Raw,glass
+TG0467,glass,3,glass,3,0.9833,YES,TrashNet_Raw,glass
+TG0468,glass,3,glass,3,0.9935,YES,TrashNet_Raw,glass
+TG0469,glass,3,glass,3,0.9925,YES,TrashNet_Raw,glass
+TG0470,glass,3,glass,3,0.9960,YES,TrashNet_Raw,glass
+TG0471,glass,3,glass,3,0.9975,YES,TrashNet_Raw,glass
+TG0472,glass,3,glass,3,0.9923,YES,TrashNet_Raw,glass
+TG0473,glass,3,glass,3,0.9999,YES,TrashNet_Raw,glass
+TG0474,glass,3,glass,3,0.9695,YES,TrashNet_Raw,glass
+TG0475,glass,3,glass,3,0.9781,YES,TrashNet_Raw,glass
+TG0476,glass,3,glass,3,0.9992,YES,TrashNet_Raw,glass
+TG0477,glass,3,glass,3,0.9846,YES,TrashNet_Raw,glass
+TG0478,glass,3,glass,3,0.9873,YES,TrashNet_Raw,glass
+TG0479,glass,3,glass,3,0.8961,YES,TrashNet_Raw,glass
+TG0480,glass,3,glass,3,0.9624,YES,TrashNet_Raw,glass
+TG0481,glass,3,glass,3,0.9990,YES,TrashNet_Raw,glass
+TG0482,glass,3,glass,3,0.9987,YES,TrashNet_Raw,glass
+TG0483,glass,3,glass,3,0.6586,YES,TrashNet_Raw,glass
+TG0484,glass,3,glass,3,0.9988,YES,TrashNet_Raw,glass
+TG0485,glass,3,glass,3,0.9698,YES,TrashNet_Raw,glass
+TG0486,glass,3,glass,3,0.9998,YES,TrashNet_Raw,glass
+TG0487,glass,3,glass,3,0.9839,YES,TrashNet_Raw,glass
+TG0488,glass,3,glass,3,0.9997,YES,TrashNet_Raw,glass
+TG0489,glass,3,glass,3,0.5951,YES,TrashNet_Raw,glass
+TG0490,glass,3,glass,3,0.9634,YES,TrashNet_Raw,glass
+TG0491,glass,3,glass,3,0.9224,YES,TrashNet_Raw,glass
+TG0492,glass,3,metal,4,0.5815,NO,TrashNet_Raw,glass
+TG0493,glass,3,glass,3,0.9404,YES,TrashNet_Raw,glass
+TG0494,glass,3,plastic,6,0.3577,NO,TrashNet_Raw,glass
+TG0495,glass,3,plastic,6,0.8513,NO,TrashNet_Raw,glass
+TG0496,glass,3,glass,3,0.9830,YES,TrashNet_Raw,glass
+TG0497,glass,3,plastic,6,0.4775,NO,TrashNet_Raw,glass
+TG0498,glass,3,glass,3,0.9511,YES,TrashNet_Raw,glass
+TG0499,glass,3,glass,3,0.9728,YES,TrashNet_Raw,glass
+TG0500,glass,3,glass,3,1.0000,YES,TrashNet_Raw,glass
+TG0501,glass,3,glass,3,0.9853,YES,TrashNet_Raw,glass
+TM0350,metal,4,metal,4,0.9408,YES,TrashNet_Raw,metal
+TM0351,metal,4,metal,4,0.8222,YES,TrashNet_Raw,metal
+TM0352,metal,4,metal,4,0.9936,YES,TrashNet_Raw,metal
+TM0353,metal,4,metal,4,0.9851,YES,TrashNet_Raw,metal
+TM0354,metal,4,metal,4,0.6578,YES,TrashNet_Raw,metal
+TM0355,metal,4,metal,4,0.6336,YES,TrashNet_Raw,metal
+TM0356,metal,4,metal,4,0.4642,YES,TrashNet_Raw,metal
+TM0357,metal,4,metal,4,0.8027,YES,TrashNet_Raw,metal
+TM0358,metal,4,metal,4,0.5847,YES,TrashNet_Raw,metal
+TM0359,metal,4,glass,3,0.7084,NO,TrashNet_Raw,metal
+TM0360,metal,4,metal,4,0.9984,YES,TrashNet_Raw,metal
+TM0361,metal,4,metal,4,0.7141,YES,TrashNet_Raw,metal
+TM0362,metal,4,glass,3,0.7167,NO,TrashNet_Raw,metal
+TM0363,metal,4,metal,4,0.9994,YES,TrashNet_Raw,metal
+TM0364,metal,4,metal,4,0.9810,YES,TrashNet_Raw,metal
+TM0365,metal,4,metal,4,0.9987,YES,TrashNet_Raw,metal
+TM0366,metal,4,trash,7,0.5355,NO,TrashNet_Raw,metal
+TM0367,metal,4,metal,4,0.9699,YES,TrashNet_Raw,metal
+TM0368,metal,4,metal,4,0.5848,YES,TrashNet_Raw,metal
+TM0369,metal,4,glass,3,0.5606,NO,TrashNet_Raw,metal
+TM0370,metal,4,metal,4,0.9743,YES,TrashNet_Raw,metal
+TM0371,metal,4,metal,4,0.9052,YES,TrashNet_Raw,metal
+TM0372,metal,4,metal,4,0.9997,YES,TrashNet_Raw,metal
+TM0373,metal,4,metal,4,0.7585,YES,TrashNet_Raw,metal
+TM0374,metal,4,metal,4,0.9901,YES,TrashNet_Raw,metal
+TM0375,metal,4,metal,4,0.9935,YES,TrashNet_Raw,metal
+TM0376,metal,4,metal,4,0.8963,YES,TrashNet_Raw,metal
+TM0377,metal,4,metal,4,0.9336,YES,TrashNet_Raw,metal
+TM0378,metal,4,metal,4,0.9221,YES,TrashNet_Raw,metal
+TM0379,metal,4,metal,4,0.9839,YES,TrashNet_Raw,metal
+TM0380,metal,4,metal,4,0.7297,YES,TrashNet_Raw,metal
+TM0381,metal,4,glass,3,0.5997,NO,TrashNet_Raw,metal
+TM0382,metal,4,metal,4,0.9948,YES,TrashNet_Raw,metal
+TM0383,metal,4,metal,4,0.9882,YES,TrashNet_Raw,metal
+TM0384,metal,4,metal,4,0.5614,YES,TrashNet_Raw,metal
+TM0385,metal,4,metal,4,0.8783,YES,TrashNet_Raw,metal
+TM0386,metal,4,metal,4,0.9397,YES,TrashNet_Raw,metal
+TM0387,metal,4,metal,4,0.9953,YES,TrashNet_Raw,metal
+TM0388,metal,4,metal,4,0.8423,YES,TrashNet_Raw,metal
+TM0389,metal,4,metal,4,0.9975,YES,TrashNet_Raw,metal
+TM0390,metal,4,metal,4,0.9451,YES,TrashNet_Raw,metal
+TM0391,metal,4,metal,4,0.9171,YES,TrashNet_Raw,metal
+TM0392,metal,4,metal,4,0.6833,YES,TrashNet_Raw,metal
+TM0393,metal,4,metal,4,0.7311,YES,TrashNet_Raw,metal
+TM0394,metal,4,metal,4,0.5464,YES,TrashNet_Raw,metal
+TM0395,metal,4,metal,4,0.9281,YES,TrashNet_Raw,metal
+TM0396,metal,4,metal,4,0.6249,YES,TrashNet_Raw,metal
+TM0397,metal,4,glass,3,0.8807,NO,TrashNet_Raw,metal
+TM0398,metal,4,metal,4,0.9999,YES,TrashNet_Raw,metal
+TM0399,metal,4,trash,7,0.5895,NO,TrashNet_Raw,metal
+TM0400,metal,4,glass,3,0.5006,NO,TrashNet_Raw,metal
+TM0401,metal,4,metal,4,0.9999,YES,TrashNet_Raw,metal
+TM0402,metal,4,glass,3,0.6307,NO,TrashNet_Raw,metal
+TM0403,metal,4,metal,4,0.9897,YES,TrashNet_Raw,metal
+TM0404,metal,4,metal,4,0.9873,YES,TrashNet_Raw,metal
+TM0405,metal,4,glass,3,0.9271,NO,TrashNet_Raw,metal
+TM0406,metal,4,metal,4,0.9919,YES,TrashNet_Raw,metal
+TM0407,metal,4,metal,4,0.7758,YES,TrashNet_Raw,metal
+TM0408,metal,4,metal,4,0.9860,YES,TrashNet_Raw,metal
+TM0409,metal,4,trash,7,0.6446,NO,TrashNet_Raw,metal
+TM0410,metal,4,metal,4,0.9957,YES,TrashNet_Raw,metal
+TP0506,paper,5,paper,5,0.9769,YES,TrashNet_Raw,paper
+TP0507,paper,5,paper,5,0.9909,YES,TrashNet_Raw,paper
+TP0508,paper,5,paper,5,0.9946,YES,TrashNet_Raw,paper
+TP0509,paper,5,paper,5,0.9998,YES,TrashNet_Raw,paper
+TP0510,paper,5,paper,5,0.8267,YES,TrashNet_Raw,paper
+TP0511,paper,5,paper,5,0.9909,YES,TrashNet_Raw,paper
+TP0512,paper,5,paper,5,0.7875,YES,TrashNet_Raw,paper
+TP0513,paper,5,cardboard,1,0.9396,NO,TrashNet_Raw,paper
+TP0514,paper,5,paper,5,0.9999,YES,TrashNet_Raw,paper
+TP0515,paper,5,paper,5,0.9909,YES,TrashNet_Raw,paper
+TP0516,paper,5,paper,5,0.9654,YES,TrashNet_Raw,paper
+TP0517,paper,5,paper,5,0.9662,YES,TrashNet_Raw,paper
+TP0518,paper,5,paper,5,0.9967,YES,TrashNet_Raw,paper
+TP0519,paper,5,plastic,6,0.7059,NO,TrashNet_Raw,paper
+TP0520,paper,5,cardboard,1,0.5078,NO,TrashNet_Raw,paper
+TP0521,paper,5,paper,5,0.8258,YES,TrashNet_Raw,paper
+TP0522,paper,5,paper,5,0.9996,YES,TrashNet_Raw,paper
+TP0523,paper,5,paper,5,0.9991,YES,TrashNet_Raw,paper
+TP0524,paper,5,paper,5,0.8943,YES,TrashNet_Raw,paper
+TP0525,paper,5,paper,5,0.9998,YES,TrashNet_Raw,paper
+TP0526,paper,5,paper,5,0.9974,YES,TrashNet_Raw,paper
+TP0527,paper,5,paper,5,0.3730,YES,TrashNet_Raw,paper
+TP0528,paper,5,trash,7,0.3848,NO,TrashNet_Raw,paper
+TP0529,paper,5,paper,5,0.8514,YES,TrashNet_Raw,paper
+TP0530,paper,5,paper,5,0.9417,YES,TrashNet_Raw,paper
+TP0531,paper,5,paper,5,0.6868,YES,TrashNet_Raw,paper
+TP0532,paper,5,paper,5,0.8395,YES,TrashNet_Raw,paper
+TP0533,paper,5,plastic,6,0.6749,NO,TrashNet_Raw,paper
+TP0534,paper,5,paper,5,0.8548,YES,TrashNet_Raw,paper
+TP0535,paper,5,paper,5,0.9975,YES,TrashNet_Raw,paper
+TP0536,paper,5,paper,5,0.4042,YES,TrashNet_Raw,paper
+TP0537,paper,5,paper,5,0.9968,YES,TrashNet_Raw,paper
+TP0538,paper,5,paper,5,0.9406,YES,TrashNet_Raw,paper
+TP0539,paper,5,paper,5,0.9909,YES,TrashNet_Raw,paper
+TP0540,paper,5,paper,5,0.9353,YES,TrashNet_Raw,paper
+TP0541,paper,5,paper,5,0.9728,YES,TrashNet_Raw,paper
+TP0542,paper,5,paper,5,0.9765,YES,TrashNet_Raw,paper
+TP0543,paper,5,paper,5,0.9403,YES,TrashNet_Raw,paper
+TP0544,paper,5,paper,5,0.9987,YES,TrashNet_Raw,paper
+TP0545,paper,5,paper,5,0.8997,YES,TrashNet_Raw,paper
+TP0546,paper,5,paper,5,0.9388,YES,TrashNet_Raw,paper
+TP0547,paper,5,paper,5,0.8227,YES,TrashNet_Raw,paper
+TP0548,paper,5,paper,5,0.9994,YES,TrashNet_Raw,paper
+TP0549,paper,5,metal,4,0.3651,NO,TrashNet_Raw,paper
+TP0550,paper,5,plastic,6,0.3667,NO,TrashNet_Raw,paper
+TP0551,paper,5,paper,5,0.8998,YES,TrashNet_Raw,paper
+TP0552,paper,5,cardboard,1,0.9314,NO,TrashNet_Raw,paper
+TP0553,paper,5,paper,5,0.9966,YES,TrashNet_Raw,paper
+TP0554,paper,5,paper,5,0.9823,YES,TrashNet_Raw,paper
+TP0555,paper,5,paper,5,0.9598,YES,TrashNet_Raw,paper
+TP0556,paper,5,paper,5,0.6046,YES,TrashNet_Raw,paper
+TP0557,paper,5,paper,5,0.9978,YES,TrashNet_Raw,paper
+TP0558,paper,5,paper,5,0.9997,YES,TrashNet_Raw,paper
+TP0559,paper,5,trash,7,0.4250,NO,TrashNet_Raw,paper
+TP0560,paper,5,paper,5,0.9552,YES,TrashNet_Raw,paper
+TP0561,paper,5,paper,5,0.9797,YES,TrashNet_Raw,paper
+TP0562,paper,5,paper,5,1.0000,YES,TrashNet_Raw,paper
+TP0563,paper,5,paper,5,0.9995,YES,TrashNet_Raw,paper
+TP0564,paper,5,paper,5,0.9963,YES,TrashNet_Raw,paper
+TP0565,paper,5,paper,5,0.9964,YES,TrashNet_Raw,paper
+TP0566,paper,5,cardboard,1,0.5527,NO,TrashNet_Raw,paper
+TP0567,paper,5,paper,5,0.9663,YES,TrashNet_Raw,paper
+TP0568,paper,5,paper,5,0.9984,YES,TrashNet_Raw,paper
+TP0569,paper,5,paper,5,0.9996,YES,TrashNet_Raw,paper
+TP0570,paper,5,paper,5,0.8953,YES,TrashNet_Raw,paper
+TP0571,paper,5,cardboard,1,0.9482,NO,TrashNet_Raw,paper
+TP0572,paper,5,paper,5,0.9798,YES,TrashNet_Raw,paper
+TP0573,paper,5,paper,5,0.9975,YES,TrashNet_Raw,paper
+TP0574,paper,5,paper,5,0.9995,YES,TrashNet_Raw,paper
+TP0575,paper,5,paper,5,0.9999,YES,TrashNet_Raw,paper
+TP0576,paper,5,paper,5,0.9688,YES,TrashNet_Raw,paper
+TP0577,paper,5,paper,5,0.9461,YES,TrashNet_Raw,paper
+TP0578,paper,5,trash,7,0.7822,NO,TrashNet_Raw,paper
+TP0579,paper,5,paper,5,0.9959,YES,TrashNet_Raw,paper
+TP0580,paper,5,paper,5,0.9899,YES,TrashNet_Raw,paper
+TP0581,paper,5,paper,5,0.9817,YES,TrashNet_Raw,paper
+TP0582,paper,5,paper,5,0.9869,YES,TrashNet_Raw,paper
+TP0583,paper,5,paper,5,0.9984,YES,TrashNet_Raw,paper
+TP0584,paper,5,paper,5,0.9918,YES,TrashNet_Raw,paper
+TP0585,paper,5,paper,5,0.9955,YES,TrashNet_Raw,paper
+TP0586,paper,5,paper,5,0.9932,YES,TrashNet_Raw,paper
+TP0587,paper,5,paper,5,0.9556,YES,TrashNet_Raw,paper
+TP0588,paper,5,paper,5,0.9470,YES,TrashNet_Raw,paper
+TP0589,paper,5,trash,7,0.9411,NO,TrashNet_Raw,paper
+TP0590,paper,5,paper,5,0.8157,YES,TrashNet_Raw,paper
+TP0591,paper,5,paper,5,0.9958,YES,TrashNet_Raw,paper
+TP0592,paper,5,paper,5,0.7256,YES,TrashNet_Raw,paper
+TP0593,paper,5,paper,5,0.9976,YES,TrashNet_Raw,paper
+TP0594,paper,5,metal,4,0.8163,NO,TrashNet_Raw,paper
+TPL0410,plastic,6,plastic,6,0.9107,YES,TrashNet_Raw,plastic
+TPL0411,plastic,6,plastic,6,0.9963,YES,TrashNet_Raw,plastic
+TPL0412,plastic,6,plastic,6,0.7043,YES,TrashNet_Raw,plastic
+TPL0413,plastic,6,glass,3,0.8724,NO,TrashNet_Raw,plastic
+TPL0414,plastic,6,plastic,6,0.7307,YES,TrashNet_Raw,plastic
+TPL0415,plastic,6,plastic,6,0.9683,YES,TrashNet_Raw,plastic
+TPL0416,plastic,6,plastic,6,0.6437,YES,TrashNet_Raw,plastic
+TPL0417,plastic,6,glass,3,0.9767,NO,TrashNet_Raw,plastic
+TPL0418,plastic,6,glass,3,0.5995,NO,TrashNet_Raw,plastic
+TPL0419,plastic,6,plastic,6,0.9440,YES,TrashNet_Raw,plastic
+TPL0420,plastic,6,plastic,6,0.9159,YES,TrashNet_Raw,plastic
+TPL0421,plastic,6,plastic,6,0.9964,YES,TrashNet_Raw,plastic
+TPL0422,plastic,6,plastic,6,0.5035,YES,TrashNet_Raw,plastic
+TPL0423,plastic,6,plastic,6,0.5456,YES,TrashNet_Raw,plastic
+TPL0424,plastic,6,plastic,6,0.7666,YES,TrashNet_Raw,plastic
+TPL0425,plastic,6,plastic,6,0.9990,YES,TrashNet_Raw,plastic
+TPL0426,plastic,6,metal,4,0.6816,NO,TrashNet_Raw,plastic
+TPL0427,plastic,6,plastic,6,0.9990,YES,TrashNet_Raw,plastic
+TPL0428,plastic,6,plastic,6,0.9972,YES,TrashNet_Raw,plastic
+TPL0429,plastic,6,plastic,6,0.5997,YES,TrashNet_Raw,plastic
+TPL0430,plastic,6,plastic,6,0.9930,YES,TrashNet_Raw,plastic
+TPL0431,plastic,6,plastic,6,0.9866,YES,TrashNet_Raw,plastic
+TPL0432,plastic,6,plastic,6,0.9919,YES,TrashNet_Raw,plastic
+TPL0433,plastic,6,plastic,6,0.4937,YES,TrashNet_Raw,plastic
+TPL0434,plastic,6,plastic,6,0.9790,YES,TrashNet_Raw,plastic
+TPL0435,plastic,6,plastic,6,0.9861,YES,TrashNet_Raw,plastic
+TPL0436,plastic,6,glass,3,0.9539,NO,TrashNet_Raw,plastic
+TPL0437,plastic,6,plastic,6,0.9876,YES,TrashNet_Raw,plastic
+TPL0438,plastic,6,plastic,6,0.8913,YES,TrashNet_Raw,plastic
+TPL0439,plastic,6,plastic,6,0.9972,YES,TrashNet_Raw,plastic
+TPL0440,plastic,6,glass,3,0.6738,NO,TrashNet_Raw,plastic
+TPL0441,plastic,6,plastic,6,0.9968,YES,TrashNet_Raw,plastic
+TPL0442,plastic,6,plastic,6,0.9847,YES,TrashNet_Raw,plastic
+TPL0443,plastic,6,plastic,6,0.9979,YES,TrashNet_Raw,plastic
+TPL0444,plastic,6,plastic,6,0.7887,YES,TrashNet_Raw,plastic
+TPL0445,plastic,6,metal,4,0.9880,NO,TrashNet_Raw,plastic
+TPL0446,plastic,6,plastic,6,0.9933,YES,TrashNet_Raw,plastic
+TPL0447,plastic,6,plastic,6,0.9571,YES,TrashNet_Raw,plastic
+TPL0448,plastic,6,plastic,6,0.9355,YES,TrashNet_Raw,plastic
+TPL0449,plastic,6,plastic,6,0.9618,YES,TrashNet_Raw,plastic
+TPL0450,plastic,6,plastic,6,0.9752,YES,TrashNet_Raw,plastic
+TPL0451,plastic,6,plastic,6,0.6971,YES,TrashNet_Raw,plastic
+TPL0452,plastic,6,plastic,6,0.8854,YES,TrashNet_Raw,plastic
+TPL0453,plastic,6,glass,3,0.5959,NO,TrashNet_Raw,plastic
+TPL0454,plastic,6,plastic,6,0.9917,YES,TrashNet_Raw,plastic
+TPL0455,plastic,6,plastic,6,0.9843,YES,TrashNet_Raw,plastic
+TPL0456,plastic,6,plastic,6,0.9320,YES,TrashNet_Raw,plastic
+TPL0457,plastic,6,plastic,6,0.9982,YES,TrashNet_Raw,plastic
+TPL0458,plastic,6,glass,3,0.7483,NO,TrashNet_Raw,plastic
+TPL0459,plastic,6,plastic,6,0.8937,YES,TrashNet_Raw,plastic
+TPL0460,plastic,6,plastic,6,0.9271,YES,TrashNet_Raw,plastic
+TPL0461,plastic,6,glass,3,0.6372,NO,TrashNet_Raw,plastic
+TPL0462,plastic,6,plastic,6,0.9998,YES,TrashNet_Raw,plastic
+TPL0463,plastic,6,plastic,6,0.9941,YES,TrashNet_Raw,plastic
+TPL0464,plastic,6,metal,4,0.5882,NO,TrashNet_Raw,plastic
+TPL0465,plastic,6,plastic,6,0.8817,YES,TrashNet_Raw,plastic
+TPL0466,plastic,6,plastic,6,0.9136,YES,TrashNet_Raw,plastic
+TPL0467,plastic,6,plastic,6,0.9088,YES,TrashNet_Raw,plastic
+TPL0468,plastic,6,metal,4,0.4660,NO,TrashNet_Raw,plastic
+TPL0469,plastic,6,plastic,6,0.8993,YES,TrashNet_Raw,plastic
+TPL0470,plastic,6,plastic,6,0.7902,YES,TrashNet_Raw,plastic
+TPL0471,plastic,6,plastic,6,0.9962,YES,TrashNet_Raw,plastic
+TPL0472,plastic,6,plastic,6,0.9687,YES,TrashNet_Raw,plastic
+TPL0473,plastic,6,plastic,6,0.9779,YES,TrashNet_Raw,plastic
+TPL0474,plastic,6,plastic,6,0.6395,YES,TrashNet_Raw,plastic
+TPL0475,plastic,6,plastic,6,0.9913,YES,TrashNet_Raw,plastic
+TPL0476,plastic,6,plastic,6,0.9956,YES,TrashNet_Raw,plastic
+TPL0477,plastic,6,plastic,6,0.5628,YES,TrashNet_Raw,plastic
+TPL0478,plastic,6,plastic,6,0.9540,YES,TrashNet_Raw,plastic
+TPL0479,plastic,6,plastic,6,0.9708,YES,TrashNet_Raw,plastic
+TPL0480,plastic,6,plastic,6,0.7310,YES,TrashNet_Raw,plastic
+TPL0481,plastic,6,plastic,6,0.9953,YES,TrashNet_Raw,plastic
+TPL0482,plastic,6,glass,3,0.4988,NO,TrashNet_Raw,plastic
+TT0118,trash,7,trash,7,0.9884,YES,TrashNet_Raw,trash
+TT0119,trash,7,trash,7,0.9066,YES,TrashNet_Raw,trash
+TT0120,trash,7,trash,7,0.7714,YES,TrashNet_Raw,trash
+TT0121,trash,7,trash,7,0.9870,YES,TrashNet_Raw,trash
+TT0122,trash,7,trash,7,0.9153,YES,TrashNet_Raw,trash
+TT0123,trash,7,metal,4,0.4643,NO,TrashNet_Raw,trash
+TT0124,trash,7,trash,7,0.8209,YES,TrashNet_Raw,trash
+TT0125,trash,7,trash,7,0.7634,YES,TrashNet_Raw,trash
+TT0126,trash,7,trash,7,0.7609,YES,TrashNet_Raw,trash
+TT0127,trash,7,trash,7,0.6560,YES,TrashNet_Raw,trash
+TT0128,trash,7,paper,5,0.8966,NO,TrashNet_Raw,trash
+TT0129,trash,7,trash,7,0.9834,YES,TrashNet_Raw,trash
+TT0130,trash,7,trash,7,0.7750,YES,TrashNet_Raw,trash
+TT0131,trash,7,metal,4,0.3879,NO,TrashNet_Raw,trash
+TT0132,trash,7,trash,7,0.9971,YES,TrashNet_Raw,trash
+TT0133,trash,7,trash,7,0.4997,YES,TrashNet_Raw,trash
+TT0134,trash,7,trash,7,0.9998,YES,TrashNet_Raw,trash
+TT0135,trash,7,trash,7,0.9934,YES,TrashNet_Raw,trash
+TT0136,trash,7,metal,4,0.5822,NO,TrashNet_Raw,trash
+TT0137,trash,7,trash,7,0.8383,YES,TrashNet_Raw,trash

@@ -1,0 +1,27 @@
+{
+  "model_name": "waste_classifier_8class",
+  "model_format": "Keras v3 (.keras)",
+  "architecture": "MobileNetV2 Transfer Learning",
+  "num_classes": 8,
+  "class_names": [
+    "biodegradable",
+    "cardboard",
+    "e_waste",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+  ],
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "total_parameters": 2422984,
+  "test_accuracy": 0.8908382066276803,
+  "macro_f1": 0.8781166488823196,
+  "weighted_f1": 0.8920023728327925,
+  "cpu_latency_ms": 88.64750299995649,
+  "status": "EXPERIMENTAL_CANDIDATE (Not Promoted to Production)"
+}

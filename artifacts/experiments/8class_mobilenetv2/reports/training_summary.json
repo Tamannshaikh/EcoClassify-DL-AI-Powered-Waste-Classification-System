@@ -1,0 +1,189 @@
+{
+  "experiment_name": "8class_mobilenetv2",
+  "dataset_version": "8class-v1.0",
+  "total_dataset_images": 3427,
+  "splits": {
+    "train": 2399,
+    "val": 515,
+    "test": 513
+  },
+  "stage1_epochs": 18,
+  "stage2_epochs": 6,
+  "total_epochs": 24,
+  "total_training_time_seconds": 1697.4001669883728,
+  "best_epoch": 13,
+  "best_val_loss": 0.325262188911438,
+  "best_val_accuracy": 0.8970873951911926,
+  "test_metrics": {
+    "accuracy": 0.8908382066276803,
+    "macro_precision": 0.8743627001025817,
+    "macro_recall": 0.8850909144580567,
+    "macro_f1": 0.8781166488823196,
+    "weighted_precision": 0.8957882886415233,
+    "weighted_recall": 0.8908382066276803,
+    "weighted_f1": 0.8920023728327925,
+    "per_class": {
+      "biodegradable": {
+        "index": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 67
+      },
+      "cardboard": {
+        "index": 1,
+        "precision": 0.9180327868852459,
+        "recall": 0.9180327868852459,
+        "f1_score": 0.9180327868852459,
+        "support": 61
+      },
+      "e_waste": {
+        "index": 2,
+        "precision": 1.0,
+        "recall": 0.9850746268656716,
+        "f1_score": 0.9924812030075187,
+        "support": 67
+      },
+      "glass": {
+        "index": 3,
+        "precision": 0.7976190476190477,
+        "recall": 0.8933333333333333,
+        "f1_score": 0.8427672955974843,
+        "support": 75
+      },
+      "metal": {
+        "index": 4,
+        "precision": 0.7936507936507936,
+        "recall": 0.819672131147541,
+        "f1_score": 0.8064516129032258,
+        "support": 61
+      },
+      "paper": {
+        "index": 5,
+        "precision": 0.9493670886075949,
+        "recall": 0.8426966292134831,
+        "f1_score": 0.8928571428571429,
+        "support": 89
+      },
+      "plastic": {
+        "index": 6,
+        "precision": 0.8695652173913043,
+        "recall": 0.821917808219178,
+        "f1_score": 0.8450704225352113,
+        "support": 73
+      },
+      "trash": {
+        "index": 7,
+        "precision": 0.6666666666666666,
+        "recall": 0.8,
+        "f1_score": 0.7272727272727273,
+        "support": 20
+      }
+    },
+    "confusion_matrix_raw": [
+      [
+        67,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        56,
+        0,
+        0,
+        0,
+        3,
+        1,
+        1
+      ],
+      [
+        0,
+        0,
+        66,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        67,
+        3,
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        8,
+        50,
+        0,
+        0,
+        3
+      ],
+      [
+        0,
+        5,
+        0,
+        0,
+        2,
+        75,
+        3,
+        4
+      ],
+      [
+        0,
+        0,
+        0,
+        9,
+        4,
+        0,
+        60,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        3,
+        1,
+        0,
+        16
+      ]
+    ],
+    "confidence_statistics": {
+      "average_confidence_overall": 0.9066946622107693,
+      "median_confidence_overall": 0.9881515502929688,
+      "average_confidence_correct": 0.93667718155118,
+      "average_confidence_incorrect": 0.6620158883077758,
+      "count_below_50": 17,
+      "count_below_70": 67,
+      "count_below_90": 135,
+      "total_test_samples": 513
+    }
+  },
+  "cpu_benchmark": {
+    "hardware": "AMD64 Family 25 Model 124 Stepping 0, AuthenticAMD (Windows-11-10.0.26200-SP0)",
+    "tensorflow_version": "2.21.0",
+    "input_size": "224x224x3",
+    "batch_size": 1,
+    "runs": 100,
+    "average_latency_ms": 88.64750299995649,
+    "median_latency_ms": 87.27174999967247,
+    "p95_latency_ms": 98.29282999971836,
+    "min_latency_ms": 79.74779999949533,
+    "max_latency_ms": 108.99950000020908,
+    "approximate_fps": 11.280633589876647
+  }
+}

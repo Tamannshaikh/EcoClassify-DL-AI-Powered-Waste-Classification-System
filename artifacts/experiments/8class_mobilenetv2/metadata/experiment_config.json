@@ -1,0 +1,47 @@
+{
+  "experiment_name": "8class_mobilenetv2",
+  "seed": 42,
+  "python_version": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "tensorflow_version": "2.21.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 124 Stepping 0, AuthenticAMD",
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "num_classes": 8,
+  "class_mapping": {
+    "0": "biodegradable",
+    "1": "cardboard",
+    "2": "e_waste",
+    "3": "glass",
+    "4": "metal",
+    "5": "paper",
+    "6": "plastic",
+    "7": "trash"
+  },
+  "batch_size": 32,
+  "stage1_lr": 0.001,
+  "stage1_epochs": 20,
+  "stage2_lr": 1e-05,
+  "stage2_epochs": 20,
+  "fine_tune_unfrozen_layers": 30,
+  "total_parameters": 2422984,
+  "augmentation": {
+    "random_flip": "horizontal",
+    "random_rotation": 0.08,
+    "random_zoom": 0.08,
+    "random_translation": 0.05
+  },
+  "early_stopping": {
+    "patience": 5,
+    "monitor": "val_loss",
+    "restore_best_weights": true
+  },
+  "reduce_lr": {
+    "factor": 0.2,
+    "patience": 2,
+    "min_lr": 1e-06
+  }
+}

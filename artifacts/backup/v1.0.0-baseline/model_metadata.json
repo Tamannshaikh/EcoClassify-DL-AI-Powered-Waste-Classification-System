@@ -1,0 +1,57 @@
+{
+  "model_name": "MobileNetV2 (Transfer Learning)",
+  "model_architecture": "mobilenetv2",
+  "framework": "TensorFlow 2.21.0 / Keras 3.15.1",
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "classes": [
+    "cardboard",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+  ],
+  "num_classes": 6,
+  "total_parameters": 2422726,
+  "dataset_split": {
+    "train": 1769,
+    "val": 379,
+    "test": 379,
+    "total": 2527
+  },
+  "test_accuracy": 0.8707,
+  "macro_precision": 0.8623,
+  "macro_recall": 0.8444,
+  "macro_f1": 0.8514,
+  "weighted_f1": 0.87,
+  "random_seed": 42,
+  "training_config": {
+    "model_name": "MobileNetV2 Transfer Learning",
+    "stage1_epochs": 12,
+    "total_epochs": 17,
+    "batch_size": 16,
+    "stage1_lr": 0.001,
+    "fine_tune_lr": 1e-05,
+    "input_shape": [
+      224,
+      224,
+      3
+    ],
+    "training_duration_seconds": 501.84,
+    "final_train_loss": 0.50828,
+    "final_train_acc": 0.80611,
+    "best_val_loss": 0.41563,
+    "best_val_acc": 0.85224
+  },
+  "cpu_inference_benchmark": {
+    "avg_latency_ms": 61.15,
+    "min_latency_ms": 58.44,
+    "max_latency_ms": 63.37,
+    "p95_latency_ms": 62.62,
+    "approx_fps": 16.4
+  }
+}

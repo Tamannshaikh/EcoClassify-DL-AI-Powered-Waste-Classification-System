@@ -1,0 +1,9 @@
+class_name,total_target,approx_train,approx_val,approx_test,group_constraints,feasible,notes
+biodegradable,450,315,68,67,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 315 Train (70.0%), 68 Val (15.0%), 67 Test (15.0%)"
+cardboard,403,282,60,61,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 282 Train (70.0%), 60 Val (15.0%), 61 Test (15.0%)"
+e_waste,450,315,68,67,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 315 Train (70.0%), 68 Val (15.0%), 67 Test (15.0%)"
+glass,501,351,75,75,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 351 Train (70.0%), 75 Val (15.0%), 75 Test (15.0%)"
+metal,410,287,62,61,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 287 Train (70.0%), 62 Val (15.0%), 61 Test (15.0%)"
+paper,594,416,89,89,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 416 Train (70.0%), 89 Val (15.0%), 89 Test (15.0%)"
+plastic,482,337,72,73,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 337 Train (70.0%), 72 Val (15.0%), 73 Test (15.0%)"
+trash,137,96,21,20,Cluster-grouped (entity burst grouping dHash <= 2),YES,"Expected split: 96 Train (70.0%), 21 Val (15.0%), 20 Test (15.0%)"

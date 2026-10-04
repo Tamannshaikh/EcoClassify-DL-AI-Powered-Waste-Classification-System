@@ -28,7 +28,9 @@ import apiService, { extractErrorMessage } from '../services/api';
 import type { DatasetInfoResponse } from '../types';
 
 const CLASS_COLORS: Record<string, string> = {
+  biodegradable: '#84cc16',
   cardboard: '#f59e0b',
+  e_waste: '#a855f7',
   glass: '#06b6d4',
   metal: '#64748b',
   paper: '#3b82f6',
@@ -253,19 +255,19 @@ export const DatasetPage: React.FC = () => {
           <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
             <span className="font-bold text-white block mb-1">Zero Corrupted Images</span>
             <p className="text-slate-400 leading-relaxed">
-              Every single image of the 2,527 was structurally verified with Pillow headers and uniform 512×384 RGB channel alignment.
+              Every single image of the 3,427 was structurally verified with Pillow headers and uniform 224×224 RGB channel alignment.
             </p>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
             <span className="font-bold text-white block mb-1">Group-Aware Leakage Prevention</span>
             <p className="text-slate-400 leading-relaxed">
-              All 3 cross-class SHA-256 duplicate pairs were strictly isolated inside the training set, guaranteeing 0% test contamination.
+              Zero exact or perceptual duplicate matches cross splits, guaranteeing 0% test contamination across train, val, and test.
             </p>
           </div>
           <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/60">
-            <span className="font-bold text-white block mb-1">Exact Standard Classes</span>
+            <span className="font-bold text-white block mb-1">8 Unified Waste Categories</span>
             <p className="text-slate-400 leading-relaxed">
-              Strict adherence to standard TrashNet classes: cardboard, glass, metal, paper, plastic, and trash.
+              Full coverage of: biodegradable, cardboard, e_waste, glass, metal, paper, plastic, and trash.
             </p>
           </div>
         </div>

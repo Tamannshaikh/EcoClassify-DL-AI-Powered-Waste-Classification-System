@@ -48,11 +48,21 @@ def generate_gradcam_heatmap(
             conv_outputs, backbone_out = backbone_grad_model(x, training=False)
             
             # Pass through classification head
-            h = model.get_layer("gap")(backbone_out, training=False)
-            h = model.get_layer("dropout1")(h, training=False)
-            h = model.get_layer("dense1")(h, training=False)
-            h = model.get_layer("dropout2")(h, training=False)
-            preds = model.get_layer("predictions")(h, training=False)
+            try:
+                h = model.get_layer("gap")(backbone_out, training=False)
+                h = model.get_layer("dense1")(h, training=False)
+                try:
+                    h = model.get_layer("dropout1")(h, training=False)
+                except Exception:
+                    pass
+                preds = model.get_layer("predictions")(h, training=False)
+            except Exception:
+                # Fallback for 6-class baseline architecture
+                h = model.get_layer("gap")(backbone_out, training=False)
+                h = model.get_layer("dropout1")(h, training=False)
+                h = model.get_layer("dense1")(h, training=False)
+                h = model.get_layer("dropout2")(h, training=False)
+                preds = model.get_layer("predictions")(h, training=False)
 
             if pred_index is None:
                 pred_index = int(tf.argmax(preds[0]))

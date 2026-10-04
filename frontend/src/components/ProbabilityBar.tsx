@@ -7,7 +7,9 @@ interface ProbabilityBarProps {
 }
 
 const classColorStyles: Record<string, { bar: string; text: string; bg: string }> = {
+  biodegradable: { bar: 'bg-lime-500', text: 'text-lime-700', bg: 'bg-lime-50' },
   cardboard: { bar: 'bg-amber-500', text: 'text-amber-700', bg: 'bg-amber-50' },
+  e_waste: { bar: 'bg-purple-500', text: 'text-purple-700', bg: 'bg-purple-50' },
   glass: { bar: 'bg-cyan-500', text: 'text-cyan-700', bg: 'bg-cyan-50' },
   metal: { bar: 'bg-slate-500', text: 'text-slate-700', bg: 'bg-slate-50' },
   paper: { bar: 'bg-blue-500', text: 'text-blue-700', bg: 'bg-blue-50' },

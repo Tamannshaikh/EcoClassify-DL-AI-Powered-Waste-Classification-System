@@ -20,17 +20,17 @@ export const TrainingPage: React.FC = () => {
       <div className="bg-gradient-to-r from-emerald-900 to-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-md border border-emerald-500/30 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="space-y-2">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
-            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Selected Production Architecture
+            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" /> Selected Production Architecture (v2.0.0)
           </div>
-          <h3 className="text-2xl font-bold">MobileNetV2 (Transfer Learning + Fine-Tuning)</h3>
+          <h3 className="text-2xl font-bold">8-Class MobileNetV2 (Transfer Learning + Two-Stage Fine-Tuning)</h3>
           <p className="text-slate-300 text-sm max-w-2xl leading-relaxed">
-            Outperformed the baseline Custom CNN across all evaluation dimensions with an impressive <strong>87.07% test accuracy</strong> and <strong>85.14% Macro F1-Score</strong>, demonstrating superior feature extraction on complex recyclable textures.
+            Delivers robust multi-category generalization across 8 municipal waste streams with <strong>89.08% test accuracy</strong>, <strong>87.81% Macro F1-Score</strong>, and <strong>89.20% Weighted F1-Score</strong> on the unified 3,427-image benchmark.
           </p>
         </div>
         <div className="bg-emerald-950/80 rounded-xl p-4 border border-emerald-500/30 text-center shrink-0 min-w-[170px]">
-          <span className="text-[10px] uppercase font-bold text-emerald-300 tracking-wider block">Accuracy Delta</span>
-          <span className="text-3xl font-extrabold text-white font-mono mt-1 block">+18.47%</span>
-          <span className="text-xs text-emerald-400 font-medium">Over Baseline CNN</span>
+          <span className="text-[10px] uppercase font-bold text-emerald-300 tracking-wider block">Production Test Acc</span>
+          <span className="text-3xl font-extrabold text-white font-mono mt-1 block">89.08%</span>
+          <span className="text-xs text-emerald-400 font-medium">8 Waste Categories</span>
         </div>
       </div>
 
@@ -45,11 +45,11 @@ export const TrainingPage: React.FC = () => {
               </div>
               <div>
                 <h4 className="font-bold text-slate-900 text-base">Custom CNN (Baseline)</h4>
-                <p className="text-xs text-slate-400">Trained from Scratch</p>
+                <p className="text-xs text-slate-400">Trained from Scratch (6-Class)</p>
               </div>
             </div>
             <span className="px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100 text-slate-600">
-              Baseline
+              Legacy Baseline
             </span>
           </div>
 
@@ -90,41 +90,41 @@ export const TrainingPage: React.FC = () => {
                 <Cpu className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-slate-900 text-base">MobileNetV2 (Transfer Learning)</h4>
-                <p className="text-xs text-emerald-600 font-semibold">ImageNet Pretrained Weights</p>
+                <h4 className="font-bold text-slate-900 text-base">MobileNetV2 (8-Class Production)</h4>
+                <p className="text-xs text-emerald-600 font-semibold">ImageNet Pretrained + Fine-Tuning</p>
               </div>
             </div>
             <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-100 text-emerald-800">
-              Top Performer
+              Production v2.0.0
             </span>
           </div>
 
           <p className="text-xs text-slate-600 leading-relaxed">
-            Inverted residual bottleneck backbone leveraging pre-trained ImageNet feature representations, GlobalAveragePooling2D, Dropout (0.3 & 0.2), Dense (128 units), and fine-tuned top layers.
+            Inverted residual bottleneck backbone leveraging pre-trained ImageNet representations, GlobalAveragePooling2D, Dropout (0.30), Dense (128 units), and fine-tuned top 30 layers for 8 categories.
           </p>
 
           <div className="grid grid-cols-2 gap-3 text-xs pt-2">
             <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100">
               <span className="text-emerald-700 block font-medium">Total Parameters</span>
-              <span className="font-mono font-bold text-emerald-950 text-sm">2,422,726</span>
+              <span className="font-mono font-bold text-emerald-950 text-sm">2,422,984</span>
             </div>
             <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100">
               <span className="text-emerald-700 block font-medium">Test Accuracy</span>
-              <span className="font-mono font-bold text-emerald-950 text-sm">87.07%</span>
+              <span className="font-mono font-bold text-emerald-950 text-sm">89.08%</span>
             </div>
             <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100">
               <span className="text-emerald-700 block font-medium">Macro F1</span>
-              <span className="font-mono font-bold text-emerald-950 text-sm">85.14%</span>
+              <span className="font-mono font-bold text-emerald-950 text-sm">87.81%</span>
             </div>
             <div className="p-3 rounded-lg bg-emerald-50/50 border border-emerald-100">
               <span className="text-emerald-700 block font-medium">Weighted F1</span>
-              <span className="font-mono font-bold text-emerald-950 text-sm">87.00%</span>
+              <span className="font-mono font-bold text-emerald-950 text-sm">89.20%</span>
             </div>
           </div>
 
           <div className="pt-2 border-t border-emerald-100/60 flex items-center justify-between text-[11px] text-emerald-800 font-medium">
-            <span>Training Time: ~8.36 min (3.1x faster)</span>
-            <span>Inference: ~61.15 ms</span>
+            <span>Training Time: ~28.3 min (24 epochs)</span>
+            <span>Inference: ~88.65 ms</span>
           </div>
         </div>
       </div>
@@ -138,8 +138,8 @@ export const TrainingPage: React.FC = () => {
               <tr>
                 <th className="py-3 px-4">Evaluation Dimension</th>
                 <th className="py-3 px-4">Custom CNN (Baseline)</th>
-                <th className="py-3 px-4">MobileNetV2 (Selected Final)</th>
-                <th className="py-3 px-4">Winner / Delta</th>
+                <th className="py-3 px-4">MobileNetV2 (Production v2.0.0)</th>
+                <th className="py-3 px-4">Classification Scope</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-700">
@@ -150,52 +150,52 @@ export const TrainingPage: React.FC = () => {
                 <td className="py-3 px-4 font-semibold text-emerald-600">MobileNetV2</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
+                <td className="py-3 px-4 font-semibold text-slate-900">Supported Waste Classes</td>
+                <td className="py-3 px-4">6 Classes</td>
+                <td className="py-3 px-4 font-mono font-bold text-emerald-700">8 Classes</td>
+                <td className="py-3 px-4 font-semibold text-emerald-600">+Biodegradable & +E-Waste</td>
+              </tr>
+              <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Test Accuracy</td>
                 <td className="py-3 px-4 font-mono">68.60%</td>
-                <td className="py-3 px-4 font-mono font-bold text-emerald-700">87.07%</td>
-                <td className="py-3 px-4 font-semibold text-emerald-600 font-bold">+18.47%</td>
+                <td className="py-3 px-4 font-mono font-bold text-emerald-700">89.08%</td>
+                <td className="py-3 px-4 font-semibold text-emerald-600 font-bold">+20.48% vs CNN</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Macro Precision</td>
                 <td className="py-3 px-4 font-mono">68.00%</td>
-                <td className="py-3 px-4 font-mono font-bold text-emerald-700">86.23%</td>
-                <td className="py-3 px-4 font-semibold text-emerald-600">+18.23%</td>
+                <td className="py-3 px-4 font-mono font-bold text-emerald-700">87.44%</td>
+                <td className="py-3 px-4 font-semibold text-emerald-600">+19.44%</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Macro Recall</td>
                 <td className="py-3 px-4 font-mono">69.23%</td>
-                <td className="py-3 px-4 font-mono font-bold text-emerald-700">84.44%</td>
-                <td className="py-3 px-4 font-semibold text-emerald-600">+15.21%</td>
+                <td className="py-3 px-4 font-mono font-bold text-emerald-700">88.51%</td>
+                <td className="py-3 px-4 font-semibold text-emerald-600">+19.28%</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Macro F1-Score</td>
                 <td className="py-3 px-4 font-mono">65.61%</td>
-                <td className="py-3 px-4 font-mono font-bold text-emerald-700">85.14%</td>
-                <td className="py-3 px-4 font-semibold text-emerald-600 font-bold">+19.53%</td>
+                <td className="py-3 px-4 font-mono font-bold text-emerald-700">87.81%</td>
+                <td className="py-3 px-4 font-semibold text-emerald-600 font-bold">+22.20%</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Weighted F1-Score</td>
                 <td className="py-3 px-4 font-mono">68.94%</td>
-                <td className="py-3 px-4 font-mono font-bold text-emerald-700">87.00%</td>
-                <td className="py-3 px-4 font-semibold text-emerald-600 font-bold">+18.06%</td>
+                <td className="py-3 px-4 font-mono font-bold text-emerald-700">89.20%</td>
+                <td className="py-3 px-4 font-semibold text-emerald-600 font-bold">+20.26%</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Total Parameters</td>
                 <td className="py-3 px-4 font-mono">259,526</td>
-                <td className="py-3 px-4 font-mono">2,422,726</td>
-                <td className="py-3 px-4 text-slate-500">9.3x parameters</td>
-              </tr>
-              <tr className="hover:bg-slate-50/70">
-                <td className="py-3 px-4 font-semibold text-slate-900">CPU Training Duration</td>
-                <td className="py-3 px-4 font-mono">~25.91 min</td>
-                <td className="py-3 px-4 font-mono font-bold text-emerald-700">~8.36 min</td>
-                <td className="py-3 px-4 font-semibold text-emerald-600">~3.1x Shorter Training Time</td>
+                <td className="py-3 px-4 font-mono">2,422,984</td>
+                <td className="py-3 px-4 text-slate-500">2.42M params</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Avg CPU Inference Latency</td>
                 <td className="py-3 px-4 font-mono">~42.1 ms</td>
-                <td className="py-3 px-4 font-mono font-bold">~61.15 ms</td>
-                <td className="py-3 px-4 text-slate-500">Both Real-time (&lt;100ms)</td>
+                <td className="py-3 px-4 font-mono font-bold">~88.65 ms</td>
+                <td className="py-3 px-4 text-slate-500">P95: 98.29 ms</td>
               </tr>
               <tr className="hover:bg-slate-50/70">
                 <td className="py-3 px-4 font-semibold text-slate-900">Grad-CAM Interpretability</td>
@@ -217,11 +217,11 @@ export const TrainingPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-300">
           <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
             <span className="text-slate-400 block mb-0.5">Optimizer</span>
-            <span className="font-bold text-white text-sm">Adam (lr=1e-3, fine-tune lr=1e-4)</span>
+            <span className="font-bold text-white text-sm">Adam (Stage 1: 1e-3, Stage 2: 1e-5)</span>
           </div>
           <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
             <span className="text-slate-400 block mb-0.5">Loss Function</span>
-            <span className="font-bold text-white text-sm">Categorical Crossentropy</span>
+            <span className="font-bold text-white text-sm">Categorical Crossentropy + Class Weights</span>
           </div>
           <div className="p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
             <span className="text-slate-400 block mb-0.5">Batch Size</span>

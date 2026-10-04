@@ -1,6 +1,6 @@
 """
-Phase 7: Comprehensive Full System Integration, End-to-End Testing & QA Script.
-Tests dataset integrity, model artifacts, backend endpoints, 6-class real predictions,
+Phase 14: Comprehensive Full System Integration, End-to-End Testing & QA Script.
+Tests 8-class dataset integrity, model artifacts, backend endpoints, 8-class real predictions,
 Grad-CAM explainability, SQLite persistence, and security controls.
 """
 import sys
@@ -19,61 +19,84 @@ if str(PROJECT_ROOT) not in sys.path:
 from backend.app.main import app
 from backend.app.config import (
     DATA_DIR,
-    PROCESSED_DIR,
-    TRAIN_DIR,
-    VAL_DIR,
-    TEST_DIR,
     FINAL_ARTIFACTS_DIR,
     DEFAULT_MODEL_PATH,
     DEFAULT_CLASS_NAMES_PATH,
     DEFAULT_METADATA_PATH,
     DEFAULT_METRICS_PATH,
+    CATEGORY_PREFIXES,
     DB_PATH,
 )
 
-CLASSES = ["cardboard", "glass", "metal", "paper", "plastic", "trash"]
+CLASSES = [
+    "biodegradable",
+    "cardboard",
+    "e_waste",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+]
+
+EIGHT_CLASS_DIR = DATA_DIR / "final" / "8class"
+EIGHT_CLASS_TRAIN_DIR = EIGHT_CLASS_DIR / "train"
+EIGHT_CLASS_VAL_DIR = EIGHT_CLASS_DIR / "val"
+EIGHT_CLASS_TEST_DIR = EIGHT_CLASS_DIR / "test"
 
 def test_full_system():
     results = {}
     print("=" * 75)
-    print("PHASE 7 — FULL SYSTEM INTEGRATION & END-TO-END QA AUDIT")
+    print("PHASE 14 — FULL 8-CLASS SYSTEM INTEGRATION & END-TO-END QA AUDIT")
     print("=" * 75)
 
     # -------------------------------------------------------------
     # 1. DATASET INTEGRITY VERIFICATION
     # -------------------------------------------------------------
-    print("\n[STEP 1] Verifying Dataset Integrity & Splits...")
-    raw_dir = DATA_DIR / "raw" / "TrashNet"
-    raw_counts = {}
-    total_raw = 0
+    print("\n[STEP 1] Verifying 8-Class Dataset Integrity & Splits...")
+    expected_class_counts = {
+        "biodegradable": 450,
+        "cardboard": 403,
+        "e_waste": 450,
+        "glass": 501,
+        "metal": 410,
+        "paper": 594,
+        "plastic": 482,
+        "trash": 137
+    }
+    
+    total_found = 0
+    actual_counts = {}
     for cls in CLASSES:
-        cls_dir = raw_dir / cls
-        assert cls_dir.exists(), f"Missing raw directory: {cls_dir}"
-        count = len(list(cls_dir.glob("*.jpg")))
-        raw_counts[cls] = count
-        total_raw += count
+        train_c = len(list((EIGHT_CLASS_TRAIN_DIR / cls).glob("*.jpg")))
+        val_c = len(list((EIGHT_CLASS_VAL_DIR / cls).glob("*.jpg")))
+        test_c = len(list((EIGHT_CLASS_TEST_DIR / cls).glob("*.jpg")))
+        c_total = train_c + val_c + test_c
+        actual_counts[cls] = c_total
+        total_found += c_total
+        assert c_total == expected_class_counts[cls], f"Class {cls} count mismatch: {c_total} vs {expected_class_counts[cls]}"
 
-    assert total_raw == 2527, f"Expected 2527 raw images, found {total_raw}"
-    print(f"  Raw TrashNet Images: {total_raw} across 6 classes: {raw_counts}")
+    assert total_found == 3427, f"Expected 3427 total images, found {total_found}"
+    print(f"  Unified 8-Class Images: {total_found} across 8 classes: {actual_counts}")
 
     # Check processed splits
-    train_count = sum(len(list((TRAIN_DIR / c).glob("*.jpg"))) for c in CLASSES)
-    val_count = sum(len(list((VAL_DIR / c).glob("*.jpg"))) for c in CLASSES)
-    test_count = sum(len(list((TEST_DIR / c).glob("*.jpg"))) for c in CLASSES)
+    train_count = sum(len(list((EIGHT_CLASS_TRAIN_DIR / c).glob("*.jpg"))) for c in CLASSES)
+    val_count = sum(len(list((EIGHT_CLASS_VAL_DIR / c).glob("*.jpg"))) for c in CLASSES)
+    test_count = sum(len(list((EIGHT_CLASS_TEST_DIR / c).glob("*.jpg"))) for c in CLASSES)
 
-    assert train_count == 1769, f"Expected 1769 train images, got {train_count}"
-    assert val_count == 379, f"Expected 379 val images, got {val_count}"
-    assert test_count == 379, f"Expected 379 test images, got {test_count}"
-    assert train_count + val_count + test_count == 2527
+    assert train_count == 2399, f"Expected 2399 train images, got {train_count}"
+    assert val_count == 515, f"Expected 515 val images, got {val_count}"
+    assert test_count == 513, f"Expected 513 test images, got {test_count}"
+    assert train_count + val_count + test_count == 3427
 
-    print(f"  Processed Splits: Train={train_count} (70%), Val={val_count} (15%), Test={test_count} (15%)")
+    print(f"  Splits: Train={train_count} (70%), Val={val_count} (15%), Test={test_count} (15%)")
     print("  -> PASS: Dataset integrity & split counts 100% verified.")
     results["dataset_integrity"] = "PASS"
 
     # -------------------------------------------------------------
     # 2. MODEL ARTIFACT VERIFICATION
     # -------------------------------------------------------------
-    print("\n[STEP 2] Verifying Final Model Artifacts...")
+    print("\n[STEP 2] Verifying Production Model Artifacts...")
     assert DEFAULT_MODEL_PATH.exists(), f"Model file missing: {DEFAULT_MODEL_PATH}"
     assert DEFAULT_CLASS_NAMES_PATH.exists(), "class_names.json missing"
     assert DEFAULT_METADATA_PATH.exists(), "model_metadata.json missing"
@@ -85,13 +108,14 @@ def test_full_system():
 
     with open(DEFAULT_METADATA_PATH, "r", encoding="utf-8") as f:
         meta = json.load(f)
-    assert meta["test_accuracy"] >= 0.87
-    assert meta["macro_f1"] >= 0.85
-    assert meta["total_parameters"] == 2422726
+    assert meta["num_classes"] == 8
+    assert meta["test_accuracy"] >= 0.89
+    assert meta["macro_f1"] >= 0.87
+    assert meta["total_parameters"] == 2422984
 
     print(f"  Loaded Model Architecture: {meta['model_architecture']} ({meta['total_parameters']:,} parameters)")
     print(f"  Recorded Test Accuracy: {meta['test_accuracy']*100:.2f}%, Macro F1: {meta['macro_f1']*100:.2f}%")
-    print("  -> PASS: Final model artifacts verified.")
+    print("  -> PASS: Production model artifacts verified.")
     results["model_artifacts"] = "PASS"
 
     # -------------------------------------------------------------
@@ -106,41 +130,45 @@ def test_full_system():
         assert health["status"] == "ok"
         assert health["model_loaded"] is True
         assert health["classes"] == CLASSES
-        print("  GET /api/v1/health -> 200 OK (Model loaded & ready)")
+        print("  GET /api/v1/health -> 200 OK (Model loaded & ready with 8 classes)")
 
         # 3b. Model Info
         res = client.get("/api/v1/model/info")
         assert res.status_code == 200
         info = res.json()
-        assert info["num_classes"] == 6
-        print("  GET /api/v1/model/info -> 200 OK")
+        assert info["num_classes"] == 8
+        print("  GET /api/v1/model/info -> 200 OK (8 classes)")
 
         # 3c. Model Metrics
         res = client.get("/api/v1/model/metrics")
         assert res.status_code == 200
         metrics = res.json()
-        assert len(metrics["confusion_matrix"]) == 6
-        print("  GET /api/v1/model/metrics -> 200 OK")
+        assert len(metrics["confusion_matrix"]) == 8
+        assert len(metrics["per_class"]) == 8
+        print("  GET /api/v1/model/metrics -> 200 OK (8x8 confusion matrix)")
 
         # 3d. Dataset Info & Classes
         res = client.get("/api/v1/dataset/info")
         assert res.status_code == 200
-        assert res.json()["total_images"] == 2527
+        assert res.json()["total_images"] == 3427
+        assert len(res.json()["class_distribution"]) == 8
+
         res2 = client.get("/api/v1/dataset/classes")
         assert res2.status_code == 200
-        assert res2.json()["total"] == 2527
+        assert res2.json()["total"] == 3427
+        assert len(res2.json()["classes"]) == 8
         print("  GET /api/v1/dataset/info & /dataset/classes -> 200 OK")
         results["api_core"] = "PASS"
 
         # -------------------------------------------------------------
-        # 4. REAL PREDICTIONS ACROSS ALL 6 TEST CLASSES
+        # 4. REAL PREDICTIONS ACROSS ALL 8 TEST CLASSES
         # -------------------------------------------------------------
-        print("\n[STEP 4] Executing Real Inference on All 6 Test Classes...")
+        print("\n[STEP 4] Executing Real Inference on All 8 Test Classes...")
         prediction_records = []
         latencies = []
 
         for cls in CLASSES:
-            test_cls_dir = TEST_DIR / cls
+            test_cls_dir = EIGHT_CLASS_TEST_DIR / cls
             test_files = list(test_cls_dir.glob("*.jpg"))
             assert len(test_files) > 0, f"No test files found for {cls}"
             sample_file = test_files[0]
@@ -158,12 +186,15 @@ def test_full_system():
             # Assertions on response structure
             assert data["predicted_class"] in CLASSES
             assert 0.0 <= data["confidence"] <= 1.0
-            assert len(data["probabilities"]) == 6
+            assert len(data["probabilities"]) == 8
             prob_sum = sum(data["probabilities"].values())
             assert abs(prob_sum - 1.0) < 0.05
             assert data["inference_time_ms"] > 0
+            
+            # Check ID prefix
+            expected_prefix = CATEGORY_PREFIXES[data["predicted_class"]]
+            assert data["prediction_id"].startswith(expected_prefix)
 
-            elapsed_ms = (t1 - t0) * 1000.0
             latencies.append(data["inference_time_ms"])
             prediction_records.append({
                 "true_class": cls,
@@ -174,32 +205,33 @@ def test_full_system():
                 "prediction_id": data["prediction_id"]
             })
 
-            print(f"  [{cls.upper():<9}] Image: {sample_file.name:<16} -> Predicted: {data['predicted_class']:<9} (Confidence: {data['confidence']*100:.2f}%, Latency: {data['inference_time_ms']} ms)")
+            print(f"  [{cls.upper():<13}] Image: {sample_file.name:<18} -> Predicted: {data['predicted_class']:<13} (Confidence: {data['confidence']*100:.2f}%, ID: {data['prediction_id']}, Latency: {data['inference_time_ms']} ms)")
 
         avg_lat = np.mean(latencies)
         print(f"  Average Model CPU Inference Latency: {avg_lat:.2f} ms")
-        print("  -> PASS: All 6 classes classified with authentic 6-class probability distribution.")
-        results["prediction_6_classes"] = "PASS"
+        print("  -> PASS: All 8 classes classified with authentic 8-class probability distribution.")
+        results["prediction_8_classes"] = "PASS"
 
         # -------------------------------------------------------------
         # 5. GRAD-CAM END-TO-END VERIFICATION
         # -------------------------------------------------------------
         print("\n[STEP 5] Testing Grad-CAM Activation Heatmap Generation...")
-        grad_sample = list((TEST_DIR / "glass").glob("*.jpg"))[0]
-        with open(grad_sample, "rb") as f:
-            glass_bytes = f.read()
+        for sample_cls in ["biodegradable", "e_waste", "plastic"]:
+            grad_sample = list((EIGHT_CLASS_TEST_DIR / sample_cls).glob("*.jpg"))[0]
+            with open(grad_sample, "rb") as f:
+                sample_bytes = f.read()
 
-        t0 = time.perf_counter()
-        res_grad = client.post("/api/v1/predict/gradcam", files={"file": (grad_sample.name, glass_bytes, "image/jpeg")})
-        t1 = time.perf_counter()
+            t0 = time.perf_counter()
+            res_grad = client.post("/api/v1/predict/gradcam", files={"file": (grad_sample.name, sample_bytes, "image/jpeg")})
+            t1 = time.perf_counter()
 
-        assert res_grad.status_code == 200
-        grad_res = res_grad.json()
-        assert grad_res["gradcam_base64"] is not None
-        assert grad_res["gradcam_base64"].startswith("data:image/jpeg;base64,")
-        print(f"  Grad-CAM Image: {grad_sample.name} -> Class: {grad_res['predicted_class']}, Confidence: {grad_res['confidence']*100:.2f}%")
-        print(f"  Base64 Payload Length: {len(grad_res['gradcam_base64'])} chars, E2E Latency: {(t1-t0)*1000:.2f} ms")
-        print("  -> PASS: Grad-CAM overlay generated successfully.")
+            assert res_grad.status_code == 200
+            grad_res = res_grad.json()
+            assert grad_res["gradcam_base64"] is not None
+            assert grad_res["gradcam_base64"].startswith("data:image/jpeg;base64,")
+            print(f"  Grad-CAM [{sample_cls}]: {grad_sample.name} -> Class: {grad_res['predicted_class']}, Confidence: {grad_res['confidence']*100:.2f}%, Latency: {(t1-t0)*1000:.2f} ms")
+
+        print("  -> PASS: Grad-CAM overlay generated successfully for 8-class architecture.")
         results["gradcam"] = "PASS"
 
         # -------------------------------------------------------------
@@ -218,8 +250,8 @@ def test_full_system():
         assert res_single.status_code == 200
         single = res_single.json()
         assert single["prediction_id"] == test_pred_id
-        assert len(single["probabilities"]) == 6
-        print(f"  Retrieved Detail for ID {test_pred_id[:8]}... -> Verified 6 probabilities in SQLite.")
+        assert len(single["probabilities"]) == 8
+        print(f"  Retrieved Detail for ID {test_pred_id} -> Verified 8 probabilities in SQLite.")
 
         # Delete one record and confirm 404
         del_target = prediction_records[-1]["prediction_id"]
@@ -227,7 +259,7 @@ def test_full_system():
         assert res_del.status_code == 200
         res_verify_del = client.get(f"/api/v1/predictions/{del_target}")
         assert res_verify_del.status_code == 404
-        print(f"  Deleted Record ID {del_target[:8]}... -> Confirmed deletion with 404 on subsequent lookup.")
+        print(f"  Deleted Record ID {del_target} -> Confirmed deletion with 404 on subsequent lookup.")
         print("  -> PASS: SQLite database CRUD lifecycle fully operational.")
         results["sqlite_history"] = "PASS"
 
@@ -265,7 +297,7 @@ def test_full_system():
         results["security_error_handling"] = "PASS"
 
     print("\n" + "=" * 75)
-    print("PHASE 7 INTEGRATION AUDIT: ALL 7 AUDIT SECTORS PASSED (100% SUCCESS)")
+    print("PHASE 14 INTEGRATION AUDIT: ALL 7 AUDIT SECTORS PASSED (100% SUCCESS)")
     print("=" * 75)
     return results
 

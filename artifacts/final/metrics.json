@@ -1,95 +1,139 @@
 {
-  "accuracy": 0.8707,
-  "macro_precision": 0.8623,
-  "macro_recall": 0.8444,
-  "macro_f1": 0.8514,
-  "weighted_f1": 0.87,
+  "accuracy": 0.8908,
+  "macro_precision": 0.8744,
+  "macro_recall": 0.8851,
+  "macro_f1": 0.8781,
+  "weighted_f1": 0.8920,
   "per_class": {
+    "biodegradable": {
+      "precision": 1.0000,
+      "recall": 1.0000,
+      "f1_score": 1.0000,
+      "support": 67
+    },
     "cardboard": {
-      "precision": 0.8852,
-      "recall": 0.8852,
-      "f1_score": 0.8852,
+      "precision": 0.9180,
+      "recall": 0.9180,
+      "f1_score": 0.9180,
       "support": 61
     },
+    "e_waste": {
+      "precision": 1.0000,
+      "recall": 0.9851,
+      "f1_score": 0.9925,
+      "support": 67
+    },
     "glass": {
-      "precision": 0.8873,
-      "recall": 0.84,
-      "f1_score": 0.863,
+      "precision": 0.7976,
+      "recall": 0.8933,
+      "f1_score": 0.8428,
       "support": 75
     },
     "metal": {
-      "precision": 0.8462,
-      "recall": 0.9016,
-      "f1_score": 0.873,
+      "precision": 0.7937,
+      "recall": 0.8197,
+      "f1_score": 0.8065,
       "support": 61
     },
     "paper": {
-      "precision": 0.9091,
-      "recall": 0.8989,
-      "f1_score": 0.904,
+      "precision": 0.9494,
+      "recall": 0.8427,
+      "f1_score": 0.8929,
       "support": 89
     },
     "plastic": {
-      "precision": 0.8333,
-      "recall": 0.8904,
-      "f1_score": 0.8609,
+      "precision": 0.8696,
+      "recall": 0.8219,
+      "f1_score": 0.8451,
       "support": 73
     },
     "trash": {
-      "precision": 0.8125,
-      "recall": 0.65,
-      "f1_score": 0.7222,
+      "precision": 0.6667,
+      "recall": 0.8000,
+      "f1_score": 0.7273,
       "support": 20
     }
   },
   "confusion_matrix": [
     [
-      54,
+      67,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      56,
+      0,
+      0,
+      0,
+      3,
       1,
+      1
+    ],
+    [
+      0,
+      0,
+      66,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      67,
+      3,
       0,
       5,
-      1,
       0
     ],
     [
       0,
-      63,
-      3,
-      1,
+      0,
+      0,
       8,
-      0
-    ],
-    [
+      50,
       0,
-      4,
-      55,
       0,
-      2,
-      0
-    ],
-    [
-      6,
-      0,
-      3,
-      80,
-      0,
-      0
-    ],
-    [
-      0,
-      2,
-      2,
-      1,
-      65,
       3
     ],
     [
-      1,
-      1,
+      0,
+      5,
+      0,
+      0,
       2,
+      75,
+      3,
+      4
+    ],
+    [
+      0,
+      0,
+      0,
+      9,
+      4,
+      0,
+      60,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      3,
       1,
-      2,
-      13
+      0,
+      16
     ]
   ]
 }

@@ -1,0 +1,29 @@
+TargetClass,Source,SourceCategory,AvailableCount,Action,Rationale
+cardboard,TrashNet_Raw,cardboard,403,INCLUDE,"Original TrashNet class, verified high quality"
+glass,TrashNet_Raw,glass,501,INCLUDE,"Original TrashNet class, verified high quality"
+metal,TrashNet_Raw,metal,410,INCLUDE,"Original TrashNet class, verified high quality"
+paper,TrashNet_Raw,paper,594,INCLUDE,"Original TrashNet class, verified high quality"
+plastic,TrashNet_Raw,plastic,482,INCLUDE,"Original TrashNet class, verified high quality"
+trash,TrashNet_Raw,trash,137,INCLUDE,Original TrashNet residual class
+e_waste,EWaste_Image_Dataset,Battery,300,INCLUDE_BALANCED,High-impact hazardous electronic component
+e_waste,EWaste_Image_Dataset,Mobile,300,INCLUDE_BALANCED,Ubiquitous consumer electronics
+e_waste,EWaste_Image_Dataset,Mouse,300,INCLUDE_BALANCED,Standard peripheral e-waste
+e_waste,EWaste_Image_Dataset,Keyboard,300,INCLUDE_BALANCED,Standard peripheral e-waste
+e_waste,EWaste_Image_Dataset,PCB,300,INCLUDE_BALANCED,Distinctive internal electronic circuitry
+e_waste,EWaste_Image_Dataset,Microwave,300,EXCLUDE_OR_SAMPLE,Large appliance; sample subset if needed
+e_waste,EWaste_Image_Dataset,Player,300,EXCLUDE_OR_SAMPLE,Consumer media device; sample subset if needed
+e_waste,EWaste_Image_Dataset,Printer,300,EXCLUDE_OR_SAMPLE,Office electronics; sample subset if needed
+e_waste,EWaste_Image_Dataset,Television,300,EXCLUDE_OR_SAMPLE,Large screen display; sample subset if needed
+e_waste,EWaste_Image_Dataset,Washing Machine,300,EXCLUDE_OR_SAMPLE,Bulky white-goods appliance
+e_waste,CTSoc_EWaste,dataset-preparation,8,EXCLUDE,Small non-representative sample set (8 images)
+e_waste,CTSoc_EWaste,results,47,EXCLUDE,"Detection bounding box outputs, loss curves, and evaluation charts (not raw training images)"
+biodegradable,BDWaste,Banana peel,123,INCLUDE,Archetypal organic food waste
+biodegradable,BDWaste,Potato Peel,130,INCLUDE,Common household vegetable waste
+biodegradable,BDWaste,Mango Peel,121,INCLUDE,Standard organic fruit waste
+biodegradable,BDWaste,Lemon Peel,125,INCLUDE,Standard citrus organic waste
+biodegradable,BDWaste,Shell of Malta,126,INCLUDE,Citrus / fruit peel organic waste
+biodegradable,BDWaste,Rice,127,INCLUDE,Staple leftover cooked/uncooked organic food
+biodegradable,BDWaste,Sugarcane husk,125,INCLUDE,Fibrous agricultural plant biomass waste
+paper,BDWaste,4. Paper,124,EXCLUDE_FROM_ORGANIC,Paper is already a primary dry recyclable class in TrashNet (must not contaminate organic class)
+trash,BDWaste,10. Coffee cup,126,EXCLUDE_FROM_ORGANIC,Disposable coffee cups feature polyethylene/plastic linings and are non-compostable composite items
+trash,BDWaste,2. Fish ash,125,EXCLUDE_FROM_ORGANIC,"Incinerated mineral ash residue is inorganic / inert, not compostable raw organic matter"

@@ -1,0 +1,10 @@
+source_a,source_b,exact_duplicate_groups,exact_duplicate_files,notes
+TrashNet_Raw,EWaste_Image_Dataset,0,0,"Cross-dataset exact duplicate verification between TrashNet and E-Waste; Zero exact hash collisions (100% distinct, no cross-contamination)."
+TrashNet_Raw,BDWaste,0,0,"Cross-dataset exact duplicate verification between TrashNet and BDWaste; Zero exact hash collisions (100% distinct, no cross-contamination)."
+EWaste_Image_Dataset,BDWaste,0,0,"Cross-dataset exact duplicate verification between E-Waste and BDWaste; Zero exact hash collisions (100% distinct, no cross-contamination)."
+TrashNet_Raw,CTSoc_EWaste,0,0,"Cross-dataset exact duplicate verification between TrashNet and CTSoc; Zero exact hash collisions (100% distinct, no cross-contamination)."
+EWaste_Image_Dataset,CTSoc_EWaste,0,0,"Cross-dataset exact duplicate verification between E-Waste and CTSoc; Zero exact hash collisions (100% distinct, no cross-contamination)."
+BDWaste,CTSoc_EWaste,0,0,"Cross-dataset exact duplicate verification between BDWaste and CTSoc; Zero exact hash collisions (100% distinct, no cross-contamination)."
+EWaste_Selected_Intra,EWaste_Selected_Intra,18,37,"Intra-dataset exact duplicate check across 5 selected E-Waste categories (Battery, Mobile, Mouse, Keyboard, PCB); 18 exact duplicate groups (37 files in Mouse [10 groups/20 files], PCB [7 groups/15 files], Mobile [1 group/2 files]). Resolved via deduplication."
+BDWaste_Selected_Intra,BDWaste_Selected_Intra,18,144,"Intra-dataset exact duplicate check across 7 approved BDWaste organic categories; 18 exact duplicate groups (144 files in Shell of Malta [4 groups/116 files], Sugarcane [8 groups/16 files], Potato [4 groups/8 files], Rice [1 group/2 files], Banana [1 group/2 files]). Resolved via deduplication."
+TrashNet_Raw,TrashNet_Processed,2524,5054,"Baseline mirroring verification (all 2,527 raw files mapped to processed train/val/test copies); 2524 exact groups (5054 files) confirm 1:1 mirroring between raw baseline and processed splits."

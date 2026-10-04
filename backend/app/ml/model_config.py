@@ -30,8 +30,17 @@ FINAL_ARTIFACTS_DIR = ARTIFACTS_DIR / "final"
 for d in [CNN_ARTIFACTS_DIR, MOBILENET_ARTIFACTS_DIR, EVALUATION_DIR, FINAL_ARTIFACTS_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
-# Ground-truth classes (alphabetical matching folder structure)
-CLASSES = ["cardboard", "glass", "metal", "paper", "plastic", "trash"]
+# Ground-truth classes (8-class unified taxonomy)
+CLASSES = [
+    "biodegradable",
+    "cardboard",
+    "e_waste",
+    "glass",
+    "metal",
+    "paper",
+    "plastic",
+    "trash"
+]
 NUM_CLASSES = len(CLASSES)
 CLASS_TO_IDX = {cls: idx for idx, cls in enumerate(CLASSES)}
 IDX_TO_CLASS = {idx: cls for idx, cls in enumerate(CLASSES)}

@@ -28,7 +28,9 @@ DB_PATH = DATA_DIR / "waste_classification.db"
 
 # Category-based Prediction ID Prefixes
 CATEGORY_PREFIXES = {
+    "biodegradable": "TB",
     "cardboard": "TC",
+    "e_waste": "TE",
     "glass": "TG",
     "metal": "TM",
     "paper": "TP",
@@ -45,7 +47,7 @@ DEFAULT_METRICS_PATH = FINAL_ARTIFACTS_DIR / "metrics.json"
 # API & Server Settings
 APP_NAME = "Smart Waste Classification System"
 API_PREFIX = "/api/v1"
-MODEL_VERSION = "v1.0"
+MODEL_VERSION = "v2.0"
 MAX_UPLOAD_SIZE_MB = int(os.getenv("MAX_UPLOAD_SIZE_MB", 10))
 MAX_UPLOAD_BYTES = MAX_UPLOAD_SIZE_MB * 1024 * 1024
 

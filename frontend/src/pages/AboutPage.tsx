@@ -34,7 +34,7 @@ export const AboutPage: React.FC = () => {
         </div>
 
         <p className="text-sm text-slate-700 leading-relaxed">
-          Municipal recycling facilities and automated sorting plants face significant contamination challenges due to manual sorting errors. <strong>EcoClassify DL</strong> demonstrates how state-of-the-art Convolutional Neural Networks (CNNs) and Transfer Learning can provide real-time, deterministic, and explainable waste item categorization into six primary TrashNet classes: <strong>Cardboard</strong>, <strong>Glass</strong>, <strong>Metal</strong>, <strong>Paper</strong>, <strong>Plastic</strong>, and <strong>Trash</strong>.
+          Municipal recycling facilities and automated sorting plants face significant contamination challenges due to manual sorting errors. <strong>EcoClassify DL</strong> demonstrates how state-of-the-art Convolutional Neural Networks (CNNs) and Transfer Learning provide real-time, deterministic, and explainable waste item categorization into eight unified classes: <strong>Biodegradable</strong>, <strong>Cardboard</strong>, <strong>E-Waste</strong>, <strong>Glass</strong>, <strong>Metal</strong>, <strong>Paper</strong>, <strong>Plastic</strong>, and <strong>Trash</strong>.
         </p>
       </div>
 

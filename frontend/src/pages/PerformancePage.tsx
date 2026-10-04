@@ -22,7 +22,16 @@ import { LoadingSkeleton } from '../components/LoadingSkeleton';
 import apiService, { extractErrorMessage } from '../services/api';
 import type { MetricsResponse, ModelInfoResponse } from '../types';
 
-const CLASS_NAMES = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash'];
+const CLASS_NAMES = [
+  'biodegradable',
+  'cardboard',
+  'e_waste',
+  'glass',
+  'metal',
+  'paper',
+  'plastic',
+  'trash'
+];
 
 export const PerformancePage: React.FC = () => {
   const [metrics, setMetrics] = useState<MetricsResponse | null>(null);
@@ -85,7 +94,7 @@ export const PerformancePage: React.FC = () => {
       <div className="border-b border-slate-200 pb-4">
         <h2 className="text-2xl font-bold text-slate-900 tracking-tight">Model Evaluation & Metrics</h2>
         <p className="text-sm text-slate-500 mt-1">
-          Detailed quantitative test performance of the MobileNetV2 transfer learning model evaluated on 379 test samples.
+          Detailed quantitative test performance of the MobileNetV2 transfer learning model evaluated on 513 held-out test samples.
         </p>
       </div>
 
@@ -97,7 +106,7 @@ export const PerformancePage: React.FC = () => {
           subtitle="Overall classification rate"
           icon={Target}
           color="emerald"
-          trend="Production Model"
+          trend="Production v2.0.0"
         />
         <MetricCard
           title="Macro Precision"
@@ -121,6 +130,14 @@ export const PerformancePage: React.FC = () => {
           color="teal"
           trend="Balanced"
         />
+      </div>
+
+      {/* Limitation Notice */}
+      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 flex items-start gap-3">
+        <div className="font-semibold shrink-0">Note on Limitations:</div>
+        <div>
+          Trash remains the weakest class with F1 = 0.7273 due to limited class support (20 test samples). Biodegradable and E-Waste achieve strong generalization with F1 &gt; 0.99. Measured CPU inference latency: 88.65 ms.
+        </div>
       </div>
 
       {/* Per-Class Metrics Bar Chart */}

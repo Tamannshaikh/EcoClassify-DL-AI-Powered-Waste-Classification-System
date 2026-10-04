@@ -20,10 +20,20 @@ const MAX_FILE_SIZE_MB = 10;
 const ALLOWED_EXTENSIONS = ['image/jpeg', 'image/jpg', 'image/png'];
 
 const DISPOSAL_TIPS: Record<string, { title: string; desc: string; bin: string }> = {
+  biodegradable: {
+    title: 'Compostable Organic Waste',
+    desc: 'Food scraps, fruit and vegetable peels, eggshells, and garden trimmings. Keep free of plastics and synthetic wraps.',
+    bin: 'Green / Organics & Compost Bin',
+  },
   cardboard: {
     title: 'Recyclable Paper/Cardboard',
     desc: 'Flatten cardboard boxes to save space. Keep dry and free of greasy food residue.',
     bin: 'Blue / Dry Recyclables Bin',
+  },
+  e_waste: {
+    title: 'Hazardous Electronic Waste',
+    desc: 'Circuit boards, batteries, cables, small electronics, and components. Do not dispose in regular trash; deposit at certified e-waste collection points.',
+    bin: 'Purple / Dedicated E-Waste Drop-Off',
   },
   glass: {
     title: 'Recyclable Glass',

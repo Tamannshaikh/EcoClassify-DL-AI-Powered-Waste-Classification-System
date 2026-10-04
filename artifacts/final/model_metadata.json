@@ -1,6 +1,8 @@
 {
-  "model_name": "MobileNetV2 (Transfer Learning)",
+  "model_name": "MobileNetV2 8-Class Transfer Learning",
   "model_architecture": "mobilenetv2",
+  "model_version": "2.0.0",
+  "dataset_version": "8class-v1.0",
   "framework": "TensorFlow 2.21.0 / Keras 3.15.1",
   "input_shape": [
     224,
@@ -8,50 +10,69 @@
     3
   ],
   "classes": [
+    "biodegradable",
     "cardboard",
+    "e_waste",
     "glass",
     "metal",
     "paper",
     "plastic",
     "trash"
   ],
-  "num_classes": 6,
-  "total_parameters": 2422726,
-  "dataset_split": {
-    "train": 1769,
-    "val": 379,
-    "test": 379,
-    "total": 2527
+  "category_prefixes": {
+    "biodegradable": "TB",
+    "cardboard": "TC",
+    "e_waste": "TE",
+    "glass": "TG",
+    "metal": "TM",
+    "paper": "TP",
+    "plastic": "TPL",
+    "trash": "TT"
   },
-  "test_accuracy": 0.8707,
-  "macro_precision": 0.8623,
-  "macro_recall": 0.8444,
-  "macro_f1": 0.8514,
-  "weighted_f1": 0.87,
+  "num_classes": 8,
+  "total_parameters": 2422984,
+  "dataset_split": {
+    "train": 2399,
+    "val": 515,
+    "test": 513,
+    "total": 3427
+  },
+  "test_accuracy": 0.8908,
+  "macro_precision": 0.8744,
+  "macro_recall": 0.8851,
+  "macro_f1": 0.8781,
+  "weighted_f1": 0.8920,
   "random_seed": 42,
+  "baseline_reference": "v1.0.0-baseline (commit 9a3dff3)",
+  "promotion_date": "2026-10-04",
+  "gradcam_target_layer": "mobilenetv2_1.00_224::out_relu",
   "training_config": {
-    "model_name": "MobileNetV2 Transfer Learning",
-    "stage1_epochs": 12,
-    "total_epochs": 17,
-    "batch_size": 16,
+    "model_name": "MobileNetV2 8-Class Transfer Learning",
+    "stage1_epochs": 18,
+    "stage2_epochs": 6,
+    "total_epochs": 24,
+    "best_epoch": 13,
+    "batch_size": 32,
     "stage1_lr": 0.001,
     "fine_tune_lr": 1e-05,
+    "fine_tuned_layers": 30,
     "input_shape": [
       224,
       224,
       3
     ],
-    "training_duration_seconds": 501.84,
-    "final_train_loss": 0.50828,
-    "final_train_acc": 0.80611,
-    "best_val_loss": 0.41563,
-    "best_val_acc": 0.85224
+    "training_duration_seconds": 1697.4,
+    "best_val_loss": 0.3253,
+    "best_val_acc": 0.8971
   },
   "cpu_inference_benchmark": {
-    "avg_latency_ms": 61.15,
-    "min_latency_ms": 58.44,
-    "max_latency_ms": 63.37,
-    "p95_latency_ms": 62.62,
-    "approx_fps": 16.4
+    "avg_latency_ms": 88.65,
+    "median_latency_ms": 87.27,
+    "min_latency_ms": 79.75,
+    "max_latency_ms": 109.00,
+    "p95_latency_ms": 98.29,
+    "approx_fps": 11.3,
+    "test_runs": 100,
+    "notes": "Measured CPU inference latency: 88.65 ms on the development machine."
   }
 }

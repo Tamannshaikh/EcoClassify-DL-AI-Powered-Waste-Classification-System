@@ -31,7 +31,9 @@ import type {
 } from '../types';
 
 const CLASS_COLORS: Record<string, string> = {
+  biodegradable: '#84cc16',
   cardboard: '#f59e0b',
+  e_waste: '#a855f7',
   glass: '#06b6d4',
   metal: '#64748b',
   paper: '#3b82f6',

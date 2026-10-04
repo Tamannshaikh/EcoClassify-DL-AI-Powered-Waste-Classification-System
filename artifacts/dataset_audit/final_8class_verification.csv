@@ -1,0 +1,9 @@
+class_index,class_name,prefix,source,available_images,target_images,selection_strategy,verified,notes
+0,biodegradable,TB,BDWaste (7 Approved Organic Categories),877,450,Deterministic deduplicated quota (14 Malta + 72-73 each from 6 categories),YES,"Vegetable/fruit peels, husk, rice scraps"
+1,cardboard,TC,TrashNet Raw,403,403,All 403 original TrashNet images retained,YES,Preserves baseline data distribution
+2,e_waste,TE,EWaste Image Dataset (5 Categories),1500,450,Deterministic uniform sampling (90 per category x 5 categories),YES,"Battery, Mobile, Mouse, Keyboard, PCB"
+3,glass,TG,TrashNet Raw,501,501,All 501 original TrashNet images retained,YES,Preserves baseline data distribution
+4,metal,TM,TrashNet Raw,410,410,All 410 original TrashNet images retained,YES,Preserves baseline data distribution
+5,paper,TP,TrashNet Raw,594,594,All 594 original TrashNet images retained,YES,Preserves baseline data distribution
+6,plastic,TPL,TrashNet Raw,482,482,All 482 original TrashNet images retained,YES,Preserves baseline data distribution
+7,trash,TT,TrashNet Raw,137,137,All 137 original TrashNet images retained (NO synthetic duplicates),YES,Original residual trash class preserved; use loss weighting

@@ -39,7 +39,9 @@ def test_health_endpoint(client):
     data = response.json()
     assert data["status"] == "ok"
     assert data["model_loaded"] is True
-    assert len(data["classes"]) == 6
+    assert len(data["classes"]) == 8
+    assert "biodegradable" in data["classes"]
+    assert "e_waste" in data["classes"]
     assert "plastic" in data["classes"]
     assert "trash" in data["classes"]
 
@@ -49,9 +51,10 @@ def test_model_info_endpoint(client):
     assert response.status_code == 200
     data = response.json()
     assert data["model_architecture"] == "mobilenetv2"
-    assert data["num_classes"] == 6
+    assert data["num_classes"] == 8
     assert data["test_accuracy"] > 0.80
     assert "classes" in data
+    assert len(data["classes"]) == 8
 
 
 def test_model_metrics_endpoint(client):
@@ -62,26 +65,27 @@ def test_model_metrics_endpoint(client):
     assert "macro_f1" in data
     assert "per_class" in data
     assert "confusion_matrix" in data
-    assert len(data["confusion_matrix"]) == 6
+    assert len(data["confusion_matrix"]) == 8
+    assert len(data["per_class"]) == 8
 
 
 def test_dataset_info_endpoint(client):
     response = client.get("/api/v1/dataset/info")
     assert response.status_code == 200
     data = response.json()
-    assert data["total_images"] == 2527
-    assert len(data["class_distribution"]) == 6
-    assert data["splits"]["train"] == 1769
-    assert data["splits"]["val"] == 379
-    assert data["splits"]["test"] == 379
+    assert data["total_images"] == 3427
+    assert len(data["class_distribution"]) == 8
+    assert data["splits"]["train"] == 2399
+    assert data["splits"]["val"] == 515
+    assert data["splits"]["test"] == 513
 
 
 def test_dataset_classes_endpoint(client):
     response = client.get("/api/v1/dataset/classes")
     assert response.status_code == 200
     data = response.json()
-    assert len(data["classes"]) == 6
-    assert data["total"] == 2527
+    assert len(data["classes"]) == 8
+    assert data["total"] == 3427
 
 
 def test_predict_endpoint_real_image(client):
@@ -97,9 +101,11 @@ def test_predict_endpoint_real_image(client):
     assert response.status_code == 200
     data = response.json()
     assert "predicted_class" in data
-    assert data["predicted_class"] in ["cardboard", "glass", "metal", "paper", "plastic", "trash"]
+    assert data["predicted_class"] in [
+        "biodegradable", "cardboard", "e_waste", "glass", "metal", "paper", "plastic", "trash"
+    ]
     assert 0.0 <= data["confidence"] <= 1.0
-    assert len(data["probabilities"]) == 6
+    assert len(data["probabilities"]) == 8
     assert abs(sum(data["probabilities"].values()) - 1.0) < 0.05
     assert data["inference_time_ms"] > 0
 
@@ -164,7 +170,9 @@ def test_predict_endpoint_png_image(client):
     )
     assert response.status_code == 200
     data = response.json()
-    assert data["predicted_class"] in ["cardboard", "glass", "metal", "paper", "plastic", "trash"]
+    assert data["predicted_class"] in [
+        "biodegradable", "cardboard", "e_waste", "glass", "metal", "paper", "plastic", "trash"
+    ]
 
 
 def test_predict_empty_file(client):
@@ -238,12 +246,16 @@ def test_predict_category_id_and_image_storage(client):
 def test_independent_category_counters(client):
     from backend.app.database import get_next_prediction_id
     
-    # Generate sequential IDs for cardboard (TC) and glass (TG)
+    # Generate sequential IDs for biodegradable (TB), e_waste (TE), cardboard (TC), glass (TG)
+    tb1 = get_next_prediction_id("biodegradable")
+    te1 = get_next_prediction_id("e_waste")
     tc1 = get_next_prediction_id("cardboard")
     tg1 = get_next_prediction_id("glass")
     tc2 = get_next_prediction_id("cardboard")
     tpl1 = get_next_prediction_id("plastic")
 
+    assert tb1.startswith("TB")
+    assert te1.startswith("TE")
     assert tc1.startswith("TC")
     assert tg1.startswith("TG")
     assert tc2.startswith("TC")
