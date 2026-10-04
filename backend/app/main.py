@@ -32,7 +32,8 @@ from backend.app.routes import (
     model,
     prediction,
     history,
-    dataset
+    dataset,
+    recycling,
 )
 
 logging.basicConfig(
@@ -76,6 +77,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from fastapi.encoders import jsonable_encoder
+
 # Custom Validation Exception Handler
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
@@ -85,7 +88,7 @@ async def validation_exception_handler(request: Request, exc: RequestValidationE
             "detail": {
                 "code": "VALIDATION_ERROR",
                 "message": "Invalid request parameters.",
-                "errors": exc.errors()
+                "errors": jsonable_encoder(exc.errors())
             }
         }
     )
@@ -97,6 +100,7 @@ app.include_router(model.router, prefix=API_PREFIX)
 app.include_router(prediction.router, prefix=API_PREFIX)
 app.include_router(history.router, prefix=API_PREFIX)
 app.include_router(dataset.router, prefix=API_PREFIX)
+app.include_router(recycling.router, prefix=API_PREFIX)
 
 
 @app.get("/")

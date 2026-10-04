@@ -149,3 +149,46 @@ export interface ApiErrorResponse {
     errors?: any[];
   };
 }
+
+// ==========================================
+// Smart Recycling Center Finder Types
+// ==========================================
+
+export interface LocationCoords {
+  latitude: number;
+  longitude: number;
+}
+
+export interface RecyclingSearchRequest {
+  waste_type: string;
+  latitude: number;
+  longitude: number;
+  radius_km?: number;
+  limit?: number;
+}
+
+export interface RecyclingCenterItem {
+  id: string;
+  name: string;
+  address: string;
+  latitude: number;
+  longitude: number;
+  distance_km: number;
+  maps_url: string;
+  directions_url: string;
+  phone?: string | null;
+  opening_hours?: string | null;
+  waste_categories_handled?: string[] | null;
+  source: string;
+}
+
+export interface RecyclingSearchResponse {
+  status: string;
+  waste_type: string;
+  location: LocationCoords;
+  radius_km: number;
+  provider: string;
+  total_results: number;
+  results: RecyclingCenterItem[];
+  message?: string | null;
+}

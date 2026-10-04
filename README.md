@@ -165,6 +165,17 @@ MobileNetV2 (8-Class Inference) + Grad-CAM Engine
 - 100% parameterized SQLite statements (`?` placeholders) eliminating SQL injection risks.
 - Local CORS scoping restricted to localhost development servers.
 
+### 9. Smart Recycling Center Finder
+Locate nearby recycling centers and disposal facilities based on the predicted waste category:
+- **Context-Aware Preselection**: Automatically preselects the classified waste category (`plastic`, `e_waste`, `biodegradable`, etc.) upon opening.
+- **Manual Waste Selector**: Supports all 8 production classes with instant re-querying.
+- **Privacy-First Geolocation**: Browser geolocation requested only upon explicit user click (`navigator.geolocation`); coordinates are stored strictly in ephemeral component state.
+- **Curated Hub Presets**: 1-click presets for popular regional hubs (Navi Mumbai, Mumbai, Thane, Pune, Delhi NCR, Bengaluru) plus custom latitude/longitude inputs.
+- **Nearest-First Proximity Sorting**: Facilities ranked by Haversine geographic distance (`"Approx. X.XX km away"`).
+- **Extensible Provider Architecture**: Seamless integration with Google Places API when configured, with automatic fallback to curated regional recycling hubs.
+- **Interactive Deep Links**: Integrated 1-click external navigation links for *View on Map* and Google Maps *Get Directions*.
+- **Responsive & Accessible Modal**: Mobile-optimized, keyboard-accessible dialog with friendly empty states and waste acceptance disclaimers.
+
 ---
 
 ## Dataset
@@ -441,16 +452,15 @@ Full browser-based functional validation was conducted during **Phase 16** ([doc
 
 ---
 
-## Planned Next Feature
+## Implemented Feature: Smart Recycling Center Finder
 
-### Smart Recycling Center Finder
-> **STATUS: PLANNED / NOT YET IMPLEMENTED**
-
-The next development phase will introduce an intelligent local disposal & recycling center finder:
-- **Automatic Waste-Type Mapping**: Automatically passes the classified waste category (e.g., `e_waste`, `biodegradable`, `plastic`) to the center finder.
-- **Geolocation & Manual Search**: Detect user's current GPS location or allow manual city/postal code input.
-- **Distance-Sorted Results**: Query and display nearest verified recycling facilities, municipal compost sites, and e-waste drop-off centers.
-- **Interactive Map & Directions**: Integrated map visualization with turn-by-turn navigation links.
+The **Smart Recycling Center Finder** connects deep learning classification results directly with real-world municipal disposal and recycling facilities:
+- **Automatic Waste-Type Mapping**: Automatically passes the classified waste category (e.g., `e_waste`, `biodegradable`, `plastic`) to the finder modal.
+- **Privacy-Centric Geolocation**: Optional 1-click browser geolocation (`navigator.geolocation`) without persisting coordinates to disk.
+- **Curated Regional Hub Presets & Custom Coordinates**: 1-click presets for major metropolitan areas plus manual coordinate inputs.
+- **Dual-Provider Architecture**: Google Places API adapter with automatic fallback to curated regional hubs.
+- **Distance-Sorted Results**: Computes precise Haversine distance and badges the closest facility (`⭐ Nearest Facility`).
+- **Deep Links & Navigation**: Instant external links for Google Maps location viewing and turn-by-turn driving/transit directions.
 
 ---
 
@@ -465,7 +475,7 @@ The next development phase will introduce an intelligent local disposal & recycl
 | **Grad-CAM Explainability** | **COMPLETE** | Layer `mobilenetv2_1.00_224::out_relu` |
 | **Security Audit** | **COMPLETE** | Phase 15 Passed with Low-Risk Findings |
 | **Browser UI Validation** | **COMPLETE** | Phase 16 Passed (0 UI / Console Errors) |
-| **Smart Recycling Center Finder** | **PLANNED** | Next Development Phase |
+| **Smart Recycling Center Finder** | **COMPLETE** | Phase 18 Verified (42/42 Tests PASS) |
 
 ---
 

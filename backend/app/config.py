@@ -62,3 +62,11 @@ ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+
+# Smart Recycling Center Finder Settings
+RECYCLING_PROVIDER = os.getenv("RECYCLING_PROVIDER", "curated")
+GOOGLE_MAPS_API_KEY = os.getenv("GOOGLE_MAPS_API_KEY", "")
+DEFAULT_SEARCH_RADIUS_KM = float(os.getenv("DEFAULT_SEARCH_RADIUS_KM", "10.0"))
+MAX_SEARCH_RADIUS_KM = float(os.getenv("MAX_SEARCH_RADIUS_KM", "50.0"))
+DEFAULT_SEARCH_LIMIT = int(os.getenv("DEFAULT_SEARCH_LIMIT", "10"))
+MAX_SEARCH_LIMIT = int(os.getenv("MAX_SEARCH_LIMIT", "20"))

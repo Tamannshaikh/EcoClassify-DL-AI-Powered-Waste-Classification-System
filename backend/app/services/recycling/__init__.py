@@ -1,0 +1,3 @@
+"""
+Recycling center finder package.
+"""

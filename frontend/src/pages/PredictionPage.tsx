@@ -9,10 +9,13 @@ import {
   Clock,
   Sparkles,
   Info,
-  RefreshCw
+  RefreshCw,
+  Building2,
+  ExternalLink
 } from 'lucide-react';
 import { ProbabilityBar } from '../components/ProbabilityBar';
 import { ErrorAlert } from '../components/ErrorAlert';
+import { RecyclingCenterModal } from '../components/RecyclingCenterModal';
 import apiService, { extractErrorMessage } from '../services/api';
 import type { PredictionResponse } from '../types';
 
@@ -71,6 +74,7 @@ export const PredictionPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [activeImageView, setActiveImageView] = useState<'original' | 'gradcam'>('original');
+  const [isRecyclingModalOpen, setIsRecyclingModalOpen] = useState<boolean>(false);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -148,7 +152,7 @@ export const PredictionPage: React.FC = () => {
       <div className="border-b border-slate-200 pb-4">
         <h2 className="text-2xl font-bold text-slate-900 tracking-tight">AI Waste Classification</h2>
         <p className="text-sm text-slate-500 mt-1">
-          Upload any waste item photo to predict its category among 6 classes using MobileNetV2 with Grad-CAM activation visualization.
+          Upload any waste item photo to predict its category among 8 classes using MobileNetV2 with Grad-CAM activation visualization.
         </p>
       </div>
 
@@ -330,6 +334,28 @@ export const PredictionPage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Smart Recycling Center Finder CTA Card */}
+              <div className="bg-gradient-to-r from-emerald-600 to-teal-700 rounded-2xl p-5 text-white shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2 font-bold text-base">
+                    <Building2 className="w-5 h-5 text-emerald-200" />
+                    <span>Find Nearby Recycling Facilities</span>
+                  </div>
+                  <p className="text-xs text-emerald-100 max-w-md">
+                    Locate verified recycling centers and drop-off points for <strong className="text-white capitalize">{predictionResult.predicted_class.replace('_', ' ')}</strong> in your vicinity.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  id="open-recycling-finder-btn"
+                  onClick={() => setIsRecyclingModalOpen(true)}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-white text-emerald-800 font-bold text-xs hover:bg-emerald-50 active:scale-95 transition shadow-sm flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer"
+                >
+                  <span>♻️ Find Nearby Centers</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-emerald-700" />
+                </button>
+              </div>
+
               {/* Disposal Guideline Info Box */}
               {DISPOSAL_TIPS[predictionResult.predicted_class.toLowerCase()] && (
                 <div className="bg-emerald-50/70 border border-emerald-200/80 rounded-2xl p-5 text-xs text-emerald-950">
@@ -346,10 +372,10 @@ export const PredictionPage: React.FC = () => {
                 </div>
               )}
 
-              {/* 6-Class Probability Distribution */}
+              {/* 8-Class Probability Distribution */}
               <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm space-y-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="font-bold text-slate-900 text-sm">6-Class Probability Distribution</h4>
+                  <h4 className="font-bold text-slate-900 text-sm">8-Class Probability Distribution</h4>
                   <span className="text-xs text-slate-400">Sum = 100%</span>
                 </div>
 
@@ -383,6 +409,15 @@ export const PredictionPage: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Recycling Center Modal */}
+      {predictionResult && (
+        <RecyclingCenterModal
+          isOpen={isRecyclingModalOpen}
+          onClose={() => setIsRecyclingModalOpen(false)}
+          initialWasteType={predictionResult.predicted_class}
+        />
+      )}
     </div>
   );
 };

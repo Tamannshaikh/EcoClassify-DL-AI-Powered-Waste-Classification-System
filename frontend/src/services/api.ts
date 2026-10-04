@@ -8,6 +8,8 @@ import type {
   PredictionResponse,
   PredictionHistoryListResponse,
   PredictionHistoryItem,
+  RecyclingSearchRequest,
+  RecyclingSearchResponse,
 } from '../types';
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api/v1';
@@ -99,6 +101,11 @@ export const apiService = {
 
   deletePrediction: async (predictionId: string): Promise<{ status: string; message: string }> => {
     const response = await apiClient.delete<{ status: string; message: string }>(`/predictions/${predictionId}`);
+    return response.data;
+  },
+
+  searchRecyclingCenters: async (payload: RecyclingSearchRequest): Promise<RecyclingSearchResponse> => {
+    const response = await apiClient.post<RecyclingSearchResponse>('/recycling/search', payload);
     return response.data;
   },
 };
